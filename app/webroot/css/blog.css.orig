@@ -1,0 +1,184 @@
+/* Blog CSS */
+/* This file was made in the Fall 2014 Semester of CSC 415 (Software Engineering) for the Blogging in the Deep Group (12/1/14) */
+
+/* Back to top button */
+.cd-top {
+z-index: 999;
+display: inline-block;
+height: 60px;
+width: 60px;
+position: fixed;
+bottom: 40px;
+right: 40px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+/* image replacement properties */
+white-space: nowrap;
+background: url(goTop.jpg) no-repeat center 50%;
+visibility: hidden;
+opacity: 0;
+-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+-moz-transition: opacity .3s 0s, visibility 0s .3s;
+transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+-moz-transition: opacity .3s 0s, visibility 0s 0s;
+transition: opacity .3s 0s, visibility 0s 0s;
+border:5px solid #ffffff;
+z-index: 999;
+}
+.cd-top.cd-is-visible {
+
+/* the button becomes visible */
+visibility: visible;
+opacity: 1;
+border:5px solid #ffffff;
+}
+.cd-top.cd-fade-out {
+
+/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+opacity: .5;
+}
+
+/* Text Styling */
+#addBody {
+	color: #f5f3dc;
+	font-size: 14px;
+	font-family: "Helvetica Neue";
+	font-weight: normal;
+	line-height: 21px;   
+}
+
+
+.flashMessage {
+	margin-bottom: -12px;
+	text-align: center;
+	line-height: 16px;
+	font-size: 16px;
+	color: #f5f3dc;
+}
+
+hr{
+ 	border-color:#013435;
+      	margin:5px;
+}   
+h1{
+       	text-align: center;
+       	font-size:25px;
+}
+h2{
+      	font-size:20px;
+}
+h3{
+       	font-size:16px;
+}
+h4{
+   	font-size:12px;
+}
+h5{
+	text-align: center;
+	font-size:36px;
+	line-height:36px;
+}
+h6{
+	font-size: 16px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+       	margin: 5px;
+	text-align: justify;
+	border: 5px solid #f5f3dc;
+}
+a.pageLink{
+     	color:#037162;
+}
+
+/* View Post Styling */
+.post {
+        float: center;
+	border: 20px solid #f5f3dc;
+      	border-radius: 20px;
+      	background: #f5f3dc;
+}
+
+/* Button Styling */
+
+#postImg {
+	float: right;
+}
+
+#deleteBtn {
+	float: right;
+	position: static;
+}
+
+#submitBtn {
+	float: right;
+	background: #014344;
+	color: #014344;
+    	font-size: 14px;
+    	font-family: "Helvetica Neue";
+    	font-weight: normal;
+    	line-height: 21px;
+}
+
+#returnLink {
+	text-decoration: none;
+	line-height: 12px;
+}
+
+/* Sidebar */
+.sideView {
+	margin-left: 0px;
+	position: fixed;
+}
+
+/* View post container */
+#postContainer {
+	margin-left: 225px;
+}
+
+/* Resizing friendly: if page becomes too small, sidebar minimizes and reappears when hovered over */
+@media screen and (max-width:765px) {
+    .sideView {
+        margin-left: -160px;
+    }
+
+    .sideView:hover {
+        margin-left: -30px;
+    }
+
+    #postContainer {
+        margin-left: 30px;
+    }
+}
+
+/* Layout Styles */
+#twitterSidebar {
+	float: right;
+<<<<<<< HEAD
+	margin-left: 25px;
+=======
+	margin-left: -10px;
+>>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
+	margin-right: 25px;
+}
+.twitter-timeline {
+	float: center;
+}
+
+#addTitle {
+	resize: none;
+	height: 16px;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe[style]{
+      	width:600px !important;
+}
+.facebook {
+      	width:601px !important;
+      	margin:0 auto;
+}
+#commentTitle {
+      	text-align: center;
+       	font-size: 25px;
+}

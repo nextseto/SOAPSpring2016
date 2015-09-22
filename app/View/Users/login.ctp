@@ -1,0 +1,61 @@
+<!-- Again, Derek D and Kevin tryed to get Hybridauth working, no success - Kevin Bohinski 12/1/14-->
+<div id="myModal" class="modal" style="border:0px;">
+	<div class="modal-header" style="text-align: center; border-radius: 3px 3px 0 0;
+					 border-bottom: 0px">
+		<h2 style="color:#f5f3dc;">Log In</h2>
+	</div>
+	<div class="modal-body" style="border-radius: 0 0 3px 3px;">	
+		<?php echo $this->Session->flash('flash', array('element' => 'errorMessage')); ?>	<!-- Placeholder for error messages -->
+		<?php 
+			echo $this->Form->create('User', array('id' => 'usersform', 'type' => 'post',
+			'url' => array('controller' => 'users', 'action' => 'login'))); 
+	   	?>
+
+		<div class="usersform row-fluid">
+			<!--<div class="span6">
+				LOL
+				<div class="input text required">
+					<label style="color:#013435;" for="UserUsername">Username</label>
+					<input name="data[User][username]" maxlength="50" type="text" id="UserUsername"/>
+				</div>
+				<div class="input password required">
+					<label style="color:#013435;" for="UserPassword">Password</label>
+					<input name="data[User][password]" type="password" id="UserPassword"/>
+				</div>
+				<?php 
+					echo $this->Form->button('Log In', array('type' => 'submit', 'class' => 'btn btn-primary'));
+					//echo $this->Form->end();
+				?>
+				<button type="button" class="btn" onClick="location.href='http://tardis.tcnj.edu/cabect/SOAP/index.php/users/add'">Register</button>
+			</div>-->
+			<div class="span12" style="text-align:center;"> 
+			
+			<a href="/SOAP/index.php/users/login2/facebook"><button type="button" class="btn btn-primary">Login Via HybridAuth</button></a>
+				
+				<!--
+				<?php
+					$options= array( 
+						'label' => '',
+						'custom' => false,
+						'redirect' => '/',
+						'img' => 'facebook.png',
+						'alt' => '',
+						'id' => '',
+						'show-faces' => true,	// fb button only
+						'width' => 200,			// fb button only
+						'max-rows' => 1			// fb button only
+					); 
+					echo $this->Facebook->login($options); //DON'T FORGET '$this'
+				?>
+				-->
+			</div>
+		</div>
+	   </form>
+	</div>
+	<div class="modal-footer">
+		<!-- <button type="button" class="btn" onClick="history.go(-1);">Cancel</button> -->
+		<button type="button" class="btn" onclick="location.href='/SOAP/index.php'" >Cancel</button>
+
+	</div>
+
+</div>
