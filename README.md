@@ -8,15 +8,15 @@
 
 **Team Members:** 
 
-Zachary Nelson (nelsonz1@tcnj.edu)
+Zachary Nelson (nelsonz1@tcnj.edu) - nelsonz1
 
-Hunter Dubel (dubelh1@tcnj.edu)
+Hunter Dubel (dubelh1@tcnj.edu) - hdubel94
 
-Richard Levenson (levensr1@tcnj.edu)
+Richard Levenson (levensr1@tcnj.edu) - richlvnsn
 
-Jeremy Leon (leonj2@tcnj.edu)
+Jeremy Leon (leonj2@tcnj.edu) - jbleon95
 
-Evan Melquist (melquie1@tcnj.edu)
+Evan Melquist (melquie1@tcnj.edu) - melquiste
 
 **Documents:**
 
