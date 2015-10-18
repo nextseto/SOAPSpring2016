@@ -25,5 +25,5 @@ Stage II- Proposal and Specifications: [Link](https://docs.google.com/document/d
 Stage III- Requirments Modeling and Analysis:
 [Link](https://docs.google.com/a/apps.tcnj.edu/document/d/13skdawZ5Sax__63YN1EKZDCBbRk1ZCJwq5-DH36s9E0/edit?usp=sharing)
 
-Stage IV- Design
+Stage IV- Design:
 [Link](https://docs.google.com/document/d/1jRc4hEZBVf_nMbMFd1EhcEfpUJXUsFsxV8eTJgBd1PI/edit?usp=sharing)
