@@ -65,8 +65,16 @@
             </div>
         </div>
 
+	
+
+
 <div class="container-fluid">
 	<div class="row-fluid">
+		<div class="span9 map-wrapper">
+    			<!--Yilin and Tim was here -->
+			<div id="map_canvas" style="width:92%; height:60vh; position: relative;"></div>
+    		</div>
+  	</div>
 		<div class="span3 search-wrapper" >
     			
 			<div class="search-filter">
@@ -147,12 +155,7 @@
 			<?php endforeach;	?>
 			</ul>
     		</div>
-    		<div class="span9 map-wrapper">
-    			<!--Yilin was here -->
-			<div id="map_canvas" style="width:92%; height:50vh; position: absolute; top: 80px;"></div>
-    		</div>
-  	</div>
-</div>
+</div>    	
 
 <div class="modal fade" id="mapModal" tabindex="-1">
 	<div class="modal-dialog">
