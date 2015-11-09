@@ -71,10 +71,10 @@
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span9 map-wrapper">
-    			<!--Yilin and Tim was here -->
+    			<!--Modified by Yilin Yang and Tim Krajewski to move map to top of map page-->
 			<div id="map_canvas" style="width:92%; height:60vh; position: relative;"></div>
     		</div>
-  	</div>
+    		
 		<div class="span3 search-wrapper" >
     			
 			<div class="search-filter">
@@ -155,6 +155,7 @@
 			<?php endforeach;	?>
 			</ul>
     		</div>
+    	</div>	
 </div>    	
 
 <div class="modal fade" id="mapModal" tabindex="-1">
