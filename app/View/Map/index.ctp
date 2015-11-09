@@ -148,7 +148,8 @@
 			</ul>
     		</div>
     		<div class="span9 map-wrapper">
-			<div id="map_canvas" style="width:100%; height:80vh"></div>
+    			<!--Yilin was here -->
+			<div id="map_canvas" style="width:92%; height:50vh; position: absolute; top: 80px;"></div>
     		</div>
   	</div>
 </div>
