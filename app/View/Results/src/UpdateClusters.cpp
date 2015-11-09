@@ -6,7 +6,7 @@
 // Instructor: Dr. Pulimood
 // Project Name: Pollution Prognosticators
 // Description: Read data in from facilities.csv and contains.csv and use the clustering
-// on this data.
+// algorithm on this data.
 // Filename: UpdateClusters.cpp
 // Last Modified On: 11/9/15
 
