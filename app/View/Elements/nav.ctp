@@ -24,7 +24,7 @@
 					      	<li><?php echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Facilities',array('controller' => 'facilities', 'action' => 'index', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Politics',array('controller' => 'politicians', 'action' => 'index', 'full_base' => true)); ?> </li>
-						<li class="divider"></li> <!--Is this really necessary?-->
+						<li class="divider"></li> <!--Is this line really necessary?-->
 						<li><?php echo $this->Html->link('Query',array('controller' => 'pages', 'action' => 'query', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Uploads',array('controller' => 'uploads', 'action' => 'index', 'full_base' => true)); ?> </li>
 					    </ul>
