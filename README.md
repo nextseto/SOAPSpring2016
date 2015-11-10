@@ -29,4 +29,4 @@ Stage IV- Design:
 [Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Design.pdf)
 
 Stage VA- Implementation and Testing:
-[Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Implementation%20Stage%20VA.docx)
+[Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Implementation.pdf)
