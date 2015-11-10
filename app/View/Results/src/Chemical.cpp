@@ -12,10 +12,12 @@ using namespace std;
 
 Chemical::Chemical(string cID, string cName, int tamt)
 {
-	chemicalID = cID;
-	chemicalName = cName;
-	total_amount = tamt;
+	chemicalID = cID; // Chemical ID
+	chemicalName = cName; // Chemical Name
+	total_amount = tamt;  // Total Amount
 }
+
+// The following three methods are getters for the three attributes
 
 string Chemical::getChemName()
 {

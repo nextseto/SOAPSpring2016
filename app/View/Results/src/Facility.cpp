@@ -19,12 +19,12 @@ Facility::Facility(string facilityID, string facilityName, double lat, double lo
 	fid = facilityID;
 	name = facilityName;
 	latitude = lat;
-	longitude = lon;
+	longitude = lon; 
 	visited = false;
 }
 
 //----------------------------------------------------------------------------------------------------------
-// To add a Chemical object to this Facility object
+// To add a Chemical object to this Facility object, pushes chem to chemicals vector
 //----------------------------------------------------------------------------------------------------------
 void Facility::addChemical(Chemical chem)
 {
@@ -73,16 +73,25 @@ int Facility::getChemCount()
 	return chemicalCount;
 }
 
+//----------------------------------------------------------------------------------------------------------
+// Gets name of chemical at i
+//----------------------------------------------------------------------------------------------------------
 string Facility::getChemNameAt(int i)
 {
 	return chemicals.at(i).getChemName();
 }
 
+//----------------------------------------------------------------------------------------------------------
+// Gets ID of chemical at i
+//----------------------------------------------------------------------------------------------------------
 string Facility::getChemIDAt(int i)
 {
 	return chemicals.at(i).getChemID();
 }
 
+//----------------------------------------------------------------------------------------------------------
+// Gets total amount of chemical at i
+//----------------------------------------------------------------------------------------------------------
 double Facility::getChemTAAt(int i)
 {
 	return chemicals.at(i).getTA();
