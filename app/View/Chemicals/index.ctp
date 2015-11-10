@@ -22,6 +22,7 @@
 	    </div>
            
 	    <!--Table formatting. Zebra striped table, with 5 categories of information-->
+	    <!--Andrew Preuss, shorten the names of chemicals when being viewed on a small screen(mobile device)-->
             <table class="table table-striped" style="border-top: 0px;">
                 <thead>
                     <tr>
