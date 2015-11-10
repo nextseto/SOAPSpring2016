@@ -29,6 +29,27 @@
 
 					    </ul>
 				  	</li>
+				  	
+				  	      <!--Untested attempt at breaking hamburger menu into collapsible sub menus  
+				              <div class="nav-collapse">
+				                <ul class="nav">
+				                  <li class="dropdown" id="submenu1">
+				                    <ul class="dropdown-menu">
+				                        <li><?php echo $this->Html->link('Posts',array('controller' => 'posts', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Facilities',array('controller' => 'facilities', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Politics',array('controller' => 'politicians', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Query',array('controller' => 'pages', 'action' => 'query', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Uploads',array('controller' => 'uploads', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                    </ul>
+				                </ul>       
+				              </div>
+				             -->
+				  	
+				  	
+				  	
+				  	
+				  	
 					<li class="dropdown" id="menu2">
 					    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">
 					      Visualize
