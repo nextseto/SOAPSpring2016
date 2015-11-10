@@ -1,4 +1,6 @@
 <!-- File: /app/View/Chemicals/view.ctp Test change is up here -->
+
+<!-- Andrew Preuss 11/9, Chemical List does not show up well on mobile, can narrow the size of the table so that smaller screens do not mess up the table formatting. -->
 <div class=span2>
 	 <?php echo $this->element('sidebar'); ?> 
 </div>
