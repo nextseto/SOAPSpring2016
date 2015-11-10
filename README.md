@@ -20,10 +20,13 @@ Evan Melquist (melquie1@tcnj.edu) - melquiste
 
 **Documents:**
 
-Stage II- Proposal and Specifications: [Link](https://docs.google.com/document/d/1cywO4B2NPA2H5SG8sFyEP2iZFnMfJN5lNVrMjcMCfus/edit?usp=sharing)
+Stage II- Proposal and Specifications: [Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Proposal%20and%20Specifications.pdf)
 
 Stage III- Requirments Modeling and Analysis:
-[Link](https://docs.google.com/a/apps.tcnj.edu/document/d/13skdawZ5Sax__63YN1EKZDCBbRk1ZCJwq5-DH36s9E0/edit?usp=sharing)
+[Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Requirements%20Modeling%20and%20Analysis.pdf)
 
 Stage IV- Design:
-[Link](https://docs.google.com/document/d/1jRc4hEZBVf_nMbMFd1EhcEfpUJXUsFsxV8eTJgBd1PI/edit?usp=sharing)
+[Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Design.pdf)
+
+Stage VA- Implementation and Testing:
+[Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Implementation%20Stage%20VA.docx)
