@@ -6,7 +6,6 @@
 // with the Google Maps API to generate the map itself. Certain considerations were made to ensure that coordinates
 // retrieved from the database properly align with corresponding locations on the map.
 //
-
 /*
 * Modified by: Angela Huang, Graham Robers, Dylan Wulf, and Trevor Fullman
 * SE: Spring 2015
@@ -20,7 +19,6 @@
 	
 	
 	foreach($map_info as $facility) {
-
 		// Only generate marker if there are coordinates to use for plotting
 		if($facility[0]['x_coor'] != NULL && $facility[0]['y_coor'] != NULL) {
 		
@@ -72,7 +70,12 @@
 			<div class="search-filter">
 				<h2>Go to Address:</h2>
 					<input class="search-field" id="addressSearchBar" type="text" placeholder="Go to address...">
+					<!--Added a section for searching by Latitude, Longitutde, and Current Location written by Zach, Hunter, Evan, Jeremy, and Rich.-->
 					<input type="button" class="btn address-btn" value="Go"><br><br>
+                                <h2>Search Coordinates:</h2>
+					<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude"> <br><br>
+                                        <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude"> <br> <br>
+					<input type="button" class="btn latlong-btn" value="Search"> <input type="button" class="btn currentlocation-btn" value=" Use Current Location"><br><br>
 				<h2>Search Facilities:</h2>
 					<input class="search-field" id="mainSearchBar" type="text" placeholder="Enter facility name...">
 					<input type="button" class="btn search-btn" value="Search" /><br><br>
