@@ -64,7 +64,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Postgres',
 		'persistent' => false,
-		'host' => '127.0.0.1',//23.23.190.5
+		'host' => '159.91.30.133'//'127.0.0.1',//23.23.190.5
 		'port' => '5432',
 		'login' => 'postgres',//SOAPadmin
 		'password' => 'cabect',//$0@Padmin123!
