@@ -15,13 +15,13 @@
             margin:5px;
         }
         h1{
-            font-size:25px;
+            font-size:12px;
         }
         h2{
-            font-size:20px;
+            font-size:12px;
         }
         h3{
-            font-size:15px;
+            font-size:12px;
         }
         h4{
             font-size:12px;
