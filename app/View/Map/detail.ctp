@@ -14,7 +14,9 @@ Modified by Angela Huang, Graham Roberts, and Dylan Wulf to include Demographics
 	<hr>
 	<span><strong>Name:</strong> <?php echo $facility_info[0][0]['facility_name']; ?><br/></span>
 	<span><strong>Parent Company:</strong> <?php echo $facility_info[0][0]['owner_name']; ?><br/></span>
-	<span style="float: left; width: 50%;"><strong>Danger Level:</strong><?php echo $facility_info[0][0]['dangerous_state']; ?> (out of 5)<br/></span>
+	<!--Modified by Yilin Yang - Fall 2015 CSC415-->
+	<!--"float: left;" was removed from span style to turn two columns into one. This format better suits mobile. -->
+	<span style="width: 50%;"><strong>Danger Level:</strong><?php echo $facility_info[0][0]['dangerous_state']; ?> (out of 5)<br/></span>
 	<span><strong>Brownfield:</strong> <?php echo $facility_info[0][0]['is_brownfield']; ?><br/></span>
   <br/>
 </div>      	
@@ -22,7 +24,9 @@ Modified by Angela Huang, Graham Roberts, and Dylan Wulf to include Demographics
 	<h3>Location details:</h3>
 	<hr>
 	<span><strong>Street Address:</strong> <?php echo $facility_info[0][0]['location_id']; ?><br/></span>
-	<span style="float: left; width: 50%;"><strong>County:</strong> <?php echo $facility_info[0][0]['county']; ?><br/></span>
+	<!--Modified by Yilin Yang - Fall 2015 CSC415-->
+	<!--"float: left;" was removed from span style to turn two columns into one. This format better suits mobile. -->
+	<span style="width: 50%;"><strong>County:</strong> <?php echo $facility_info[0][0]['county']; ?><br/></span>
 	<span><strong>Municipality:</strong> <?php if($facility_info[0][0]['municipality'] == null) echo "N/A"; else echo $facility_info[0][0]['municipality']; ?><br/></span>
   <div style="float: left; width: 50%;">
 		<span><strong>Latitude:</strong> <?php echo (($facility_info[0][0]['latitude'] == null) ? "N/A" : $facility_info[0][0]['latitude']); ?><br/></span>

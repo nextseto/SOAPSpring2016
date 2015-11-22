@@ -13,45 +13,62 @@
 				<ul class="nav">
 					<li class="divider-vertical"></li>
 					<li class="dropdown" id="menu1">
+					    <!--Dropdown menu for Data tab-->
 					    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
 					      Data
 					      <b class="caret"></b>
 					    </a>
+					    <!--List of links to other pages under Data tab-->
 					    <ul class="dropdown-menu">
 					      	<li><?php echo $this->Html->link('Posts',array('controller' => 'posts', 'action' => 'index', 'full_base' => true)); ?> </li>
 					      	<li><?php echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Facilities',array('controller' => 'facilities', 'action' => 'index', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Politics',array('controller' => 'politicians', 'action' => 'index', 'full_base' => true)); ?> </li>
-						<li class="divider"></li>
+						<li class="divider"></li> <!--Is this line really necessary?-->
 						<li><?php echo $this->Html->link('Query',array('controller' => 'pages', 'action' => 'query', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Uploads',array('controller' => 'uploads', 'action' => 'index', 'full_base' => true)); ?> </li>
-
-
 					    </ul>
 				  	</li>
+				  	
+				  	      <!--Untested attempt at breaking hamburger menu into collapsible sub menus  
+				              <div class="nav-collapse">
+				                <ul class="nav">
+				                  <li class="dropdown" id="submenu1">
+				                    <ul class="dropdown-menu">
+				                        <li><?php echo $this->Html->link('Posts',array('controller' => 'posts', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Facilities',array('controller' => 'facilities', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Politics',array('controller' => 'politicians', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Query',array('controller' => 'pages', 'action' => 'query', 'full_base' => true)); ?> </li>
+				                        <li><?php echo $this->Html->link('Uploads',array('controller' => 'uploads', 'action' => 'index', 'full_base' => true)); ?> </li>
+				                    </ul>
+				                </ul>       
+				              </div>
+				             -->
+				             
+				        <!--Dropdown menu for Visualize tab-->     
 					<li class="dropdown" id="menu2">
 					    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">
 					      Visualize
 					      <b class="caret"></b>
 					    </a>
+					    <!--List of links to other pages under Visualize tab-->
 					    <ul class="dropdown-menu">
 						<li><?php echo $this->Html->link('Map',array('controller' => 'map', 'action' => 'index', 'full_base' => true)); ?> </li>
 						<li><?php echo $this->Html->link('Graph',array('controller' => 'pages', 'action' => 'graph', 'full_base' => true)); ?> </li>
-
-
-
 					    </ul>
 				  	</li>
+				  	
+				  	<!--Dropdown menu for Help tab-->
 				  	<li class="dropdown" id="menu3">
 					    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu3">
 					      Help
 					      <b class="caret"></b>
 					    </a>
+					    <!--List of links to other pages under Help tab-->
 					    <ul class="dropdown-menu">
-					    
 						<li><?php echo $this->Html->link('Documentation',array('controller' => 'pages', 'action' => 'docs', 'full_base' => true)); ?> </li>
-
-					  </ul>
+					    </ul>
 				  	</li>
 <!-- This file was edited in the Fall 2014 Semester of CSC 415 (Software Engineering) for the Blogging in the Deep Group -->
 				<li class="dropdown" id="menu4">
