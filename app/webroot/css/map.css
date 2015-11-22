@@ -121,7 +121,9 @@ hr {
 }
 
 .modal.fade {
-  z-index: -1;
+  /*z-index: -1;*/
+  /*Modified by Yilin Yang - Fall 2015 CSC415*/
+  /*The z-index sets the modal menu behind everything, making it unreadable. Removing it should have fixed it.*/
   transition: none;
 }
 
