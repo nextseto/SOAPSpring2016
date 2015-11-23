@@ -202,6 +202,8 @@ function goToAddress(){
     }
 }
 
+//Predicts the pollution at a location that is not a known facility
+//Added Evan Melquiste, Jeremy Leon, and Richard Levenson
 function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
 	var longitude = document.getElementById("longitudeSearchBar").value;
