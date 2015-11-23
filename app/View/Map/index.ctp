@@ -74,9 +74,10 @@
 					<input type="button" class="btn address-btn" value="Go"><br><br>
                     <h2>Search Coordinates:</h2>
 	                    <form action="coordTest.php" method = "get" >
-							<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> <br><br>
-		                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> <br> <br>
-							<input type="button" class="btn latlong-btn" value="Search"> <input type="button" class="btn currentlocation-btn" value=" Use Current Location">
+							<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> <input type="button" class="btn currentlocation-btn" value=" Use Current Location">
+							<br><br>
+		                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
+							<input type="button" class="btn latlong-btn" value="Search"> 
 						</form>
 					<br><br>
 				<h2>Search Facilities:</h2>
