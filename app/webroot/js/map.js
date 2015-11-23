@@ -7,7 +7,6 @@
  * $(document).ready block seen at the bottom of the file. 
 */
 
-<<<<<<< HEAD
 /*
  * Modified by: Dylan Wulf, Graham Roberts, Angela Huang, and Trevor Fullman 
  *
@@ -21,13 +20,12 @@
  * was also improved, allowing users to search by either a mouse click or enter key. 
 */
 
-=======
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
+
 var map;
 var mapOptions;
 var facilities;
 var markers = {};
-<<<<<<< HEAD
+
 var filterCounty = "ALL_COUNTIES";
 var filterFacilityName = "";
 var dgLevelsVisible = [true, true, true, true, true];
@@ -37,26 +35,6 @@ function initialize(wrapperId, mapOptions) {
   geocoder = new google.maps.Geocoder();  //For zoom and address search
   map = new google.maps.Map(document.getElementById(wrapperId), mapOptions);
 
-=======
-
-function initialize(wrapperId, mapOptions) {
-  map = new google.maps.Map(document.getElementById(wrapperId), mapOptions);
-  
-  google.maps.event.addListener(map, 'tilesloaded', function() {
-    $(document).on("click", "li.facility-list-item", function(e) {
-      var facilityId = $(this).attr("id");
-      
-      map.setCenter(markers[facilityId].getPosition());
-      map.setZoom(15);
-      
-      e.stopPropagation();
-      e.preventDefault();
-      
-      new google.maps.event.trigger(markers[facilityId], 'click');
-    });
-  });
-  
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
   //Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -72,7 +50,6 @@ function initialize(wrapperId, mapOptions) {
   }
 }
 
-<<<<<<< HEAD
 function handleNoGeolocation(mapOptions) { 
   map.setCenter(mapOptions.center);
   map.setZoom(8);
@@ -90,13 +67,6 @@ function codeAddress(address) {
     });
   }
 
-=======
-function handleNoGeolocation(mapOptions) {
-  map.setCenter(mapOptions.center);
-  map.setZoom(9);
-}
-
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
 function setInitialPosition(mapOptions) {
   
   var infowindow = new google.maps.InfoWindow({
@@ -142,11 +112,7 @@ function setFacilityMarker(facilityInfo) {
   var marker = new google.maps.Marker({
     position: facilityPosition,
     map: map,
-<<<<<<< HEAD
     icon: '/SOAP/app/webroot/img/map/'+iconType,
-=======
-    icon: '/cabect/SOAP/app/webroot/img/map/'+iconType,
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
     title: facilityInfo.facility_name
   });
   
@@ -170,11 +136,7 @@ function pullDetails(inputId) {
     $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-<<<<<<< HEAD
       url: location.origin + '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
-=======
-      url: location.origin + '/cabect/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
       beforeSend: function() {
         $("div#mapModal div.modal-body").empty();
         $("div#mapModal div.modal-body").addClass("loading");
@@ -186,7 +148,7 @@ function pullDetails(inputId) {
     });
 }
 
-<<<<<<< HEAD
+
 //Sets handlers for checkbox clicks and sets all boxes to be checked
 function checkboxSetup() {
 
@@ -287,12 +249,6 @@ $(document).ready(function(e){
   mapOptions = {
     center: new google.maps.LatLng(40.2679, -74.779), //Default location: NJ, USA
     zoom: 8,
-=======
-$(document).ready(function(e){
-  mapOptions = {
-    center: new google.maps.LatLng(40.2679, -74.779),
-    zoom: 9,
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
     initialPositionImage: 'http://google-maps-icons.googlecode.com/files/home.png',
     currentPositionLabel: 'Current Position',
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -300,7 +256,6 @@ $(document).ready(function(e){
   
   initialize("map_canvas", mapOptions);
   
-<<<<<<< HEAD
   facilities = window.app.facilities; //window.app.facilities is created in View/Map/index.ctp
   
   for (i = 0; i < facilities.length; i++) { 
@@ -346,25 +301,3 @@ $(document).ready(function(e){
    	if (e.which == 13) facilityNameSearch();
   });
 });
-
-=======
-  facilities = window.app.facilities;
-  
-  for (i = 0; i < facilities.length; i++) { 
-    setFacilityMarker(facilities[i])
-  }
-  
-  $('.search-btn').click(function(e){
-    var filter = $('#mainSearchBar').val();
-    
-    $.ajax({
-      type: 'get',
-      url: location.origin + '/cabect/SOAP/app/webroot/index.php/map/filter/'+ filter,
-      success: function(response) {
-        $(".search-wrapper ul").empty();
-        $(".search-wrapper ul").append(response);
-      }
-    });
-  });
-});
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
