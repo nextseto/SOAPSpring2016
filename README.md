@@ -34,3 +34,5 @@ Stage V- Implementation:
 Stage VIa - Testing:
 
 Stage VIb - Presentation:
+
+Stage VII - Final Project Report:
