@@ -28,5 +28,11 @@ Stage III- Requirments Modeling and Analysis:
 Stage IV- Design:
 [Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Design.pdf)
 
-Stage VA- Implementation and Testing:
+Stage V- Implementation:
 [Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Implementation.pdf)
+
+Stage VIa - Testing:
+
+Stage VIb - Presentation:
+
+Stage VII - Final Project Report:
