@@ -79,7 +79,7 @@
 		                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
 							<input type="button" class="btn latlong-btn" value="Search"> 
 						</form>
-					<br><br>
+					<br>
 				<h2>Search Facilities:</h2>
 					<input class="search-field" id="mainSearchBar" type="text" placeholder="Enter facility name...">
 					<input type="submit" class="btn search-btn" value="Search" /><br><br>
