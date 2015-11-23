@@ -202,6 +202,17 @@ function goToAddress(){
     }
 }
 
+function nonSitePredictor() {
+	var latitude = document.getElementById("latitudeSearchBar").value;
+	var longitude = document.getElementById("longitudeSearchBar").value;
+	
+	if(latitude !== "" && longitude !== "") {
+		confirm(latitude + " " + longitude);
+	} else {
+		confirm("Error message here.");
+	}
+}
+
 //Looks through every object in the facilities array and sets it to visible or 
 //not visible according to filter parameters (filterCounty and dgLevelsVisible)
 //Added by Dylan Wulf
@@ -280,6 +291,11 @@ $(document).ready(function(e){
   //Set up checkboxes to be checked when the page loads
   //And set up event handlers for checkboxes
   checkboxSetup();
+  
+  //
+  $('.latlong-btn').click(function(e) {
+    nonSitePredictor();
+  });
   
   //Call goToAddress() when address button is pressed
   $('.address-btn').click(function(e) {
