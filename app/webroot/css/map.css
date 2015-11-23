@@ -1,10 +1,7 @@
 /*
  * CSS style sheet for the map page.
-<<<<<<< HEAD
  * Modified by Dylan Wulf to correctly style
  * the added filtering elements.
-=======
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
  */
 
 .wrapper {
@@ -111,11 +108,7 @@ hr {
 }
 
 .modal-body.loading {
-<<<<<<< HEAD
   background-image: url("/SOAP/app/webroot/img/ajax-loader.gif");
-=======
-  background-image: url("../../../../../SOAP/app/webroot/img/ajax-loader.html");
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -141,42 +134,28 @@ a.page-link {
   width:400px !important;
 }
 
-<<<<<<< HEAD
 .search-field {
   width:68%; 
   padding-left:18px;
   margin-left:5px; 
   margin-bottom:0px;
   background: white no-repeat scroll right center url('/SOAP/app/webroot/img/icon_search.png');
-=======
-#mainSearchBar {
-  width:68%; 
-  padding-left:18px;
-  margin-left:5px; 
-  background: white no-repeat scroll right center url('../../../../../SOAP/app/webroot/img/icon_search.html');
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
   float: left;
 }
 
 .search-filter {
   width: 100%;
-<<<<<<< HEAD
   text-align: center;
-=======
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
 }
 
 .search-btn {
   margin-left: 5px;
-<<<<<<< HEAD
   float: left;
 }
 
 .address-btn {
   margin-left: 5px;
   float: left;
-=======
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
 }
 
 .search-wrapper {
@@ -218,8 +197,4 @@ a.page-link {
 
 .search-wrapper ul li:hover {
   background-color: #92986d;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
