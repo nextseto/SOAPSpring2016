@@ -229,7 +229,7 @@ function goToAddress(){
 
 
 //Predicts the pollution at a location that is not a known facility
-//Added Evan Melquiste, Jeremy Leon, and Richard Levenson
+//Added Evan Melquist, Jeremy Leon and Richard Levenson
 //Modified by Hunter Dubel
 function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
@@ -239,7 +239,7 @@ function nonSitePredictor() {
 		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-      url: location.origin + '/SOAP/app/webroot/index.php/map/detail/',
+      url: location.origin + '/SOAP/app/webroot/index.php/map/prediction/',
       beforeSend: function() {
         $("div#mapModal div.modal-body").empty();
         $("div#mapModal div.modal-body").addClass("loading");
