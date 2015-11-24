@@ -68,21 +68,24 @@
 		<div class="span3 search-wrapper" >
     			
 			<div class="search-filter">
-				<center>
 				<h2>Go to Address:</h2>
+					<center>
 					<input class="search-field" id="addressSearchBar" type="text" placeholder="Go to address...">
 					<!--Added a section for searching by Latitude, Longitutde, and Current Location written by Zach, Hunter, Evan, Jeremy, and Rich.-->
 					<br><br>
 					<input type="button" class="btn address-btn" value="Go"><br><br>
+					</center>
 
                     <h2>Search Coordinates:</h2>
+                    <center>
 	                    <form action="coordTest.php" method = "get" >
 							<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> 
 		                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
-		                    <br><br>
+		                    <br><br><br>
 							<input type="button" class="btn latlong-btn" value="Search">
 							<input type="button" class="btn currentlocation-btn" value=" Use Current Location">
 						</form>
+					</center>
 					<br><br>
 
 				<h2>Search Facilities:</h2>
