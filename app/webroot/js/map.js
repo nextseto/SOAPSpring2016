@@ -52,14 +52,6 @@ function initialize(wrapperId, mapOptions) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(goToCurrLoc);
     }
-    /*navigator.geolocation.getCurrentPosition(function(position) {
-      mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);        
-      setInitialPosition(mapOptions);
-      map.setCenter(mapOptions.initialPosition);
-      
-    }, function() {
-      handleNoGeolocation(mapOptions);
-    });*/
    else {
     handleNoGeolocation(mapOptions);
   }
@@ -74,21 +66,14 @@ function handleNoGeolocation(mapOptions) {
 //Centers the map on the user's current location.
 //If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
 //SE Fall 2015
-//Zach Nelson & Hunter Dubel
+//Added by Zach Nelson & Hunter Dubel
 function goToCurrLoc(position) {
     mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     setInitialPosition(mapOptions);
     map.setCenter(mapOptions.initialPosition);
     map.setZoom(15);
-
-  /*var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-
-  var marker = new google.maps.Marker({
-      position: coords,
-      map: map,
-      title:"Current Location"
-  });
-*/
+    var latbox = document.getElementById('latitudeSearchBar');
+    latbox.value = position.coords.latitude;
 }
 
 
