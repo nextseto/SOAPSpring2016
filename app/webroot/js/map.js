@@ -66,21 +66,16 @@ function handleNoGeolocation(mapOptions) {
   map.setZoom(6);
 }
 
-/*
+
 //Centers the map on the user's current location.
 //If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
 //SE Fall 2015
 //Zach Nelson & Hunter Dubel
-function goToCurrLoc(){
-  if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-          mapOptions.center = new google.maps.LatLng(showPosition.coords.latitude, position.coords.longitude);    
-      } 
-      function () {
-          handleNoGeolocation(mapOptions);
-        };
-      }
-*/
+function goToCurrLoc(position) {
+  mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);        
+  setInitialPosition(mapOptions);
+  map.setCenter(mapOptions.initialPosition);
+}
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
@@ -350,7 +345,11 @@ $(document).ready(function(e){
   //Call handleNoGeoLoca() when address button is pressed
   //
   $('.currentlocation-btn').click(function(e) {
-    goToCurrLoc();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(goToCurrLoc);
+    }else {
+      error('Geo Location is not supported');
+      }
   });
 
 
