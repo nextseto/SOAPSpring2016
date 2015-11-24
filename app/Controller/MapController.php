@@ -61,8 +61,8 @@ class MapController extends AppController {
 
 	//function to display prediction popup
 	public function prediction(){
-		$this->layout = 'ajax';
-		$this->render('/map/prediction.ctp');
+		// $this->layout = 'ajax';
+		// $this->render('/map/prediction.ctp');
 	}
 
 	//This function is no longer used, since filtering is now done through javascript. 
