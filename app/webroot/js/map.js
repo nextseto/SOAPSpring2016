@@ -63,8 +63,26 @@ function initialize(wrapperId, mapOptions) {
 
 function handleNoGeolocation(mapOptions) { 
   map.setCenter(mapOptions.center);
-  map.setZoom(8);
+  map.setZoom(6);
 }
+
+
+//Centers the map on the user's current location.
+//If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
+//SE Fall 2015
+//Zach Nelson & Hunter Dubel
+function goToCurrLoc(){
+  if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+          mapOptions.center = new google.maps.LatLng(showPosition.coords.latitude, position.coords.longitude);    
+      } 
+      function () {
+          handleNoGeolocation(mapOptions);
+        };
+      }
+
+}
+
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
@@ -213,22 +231,6 @@ function goToAddress(){
     }
 }
 
-//Centers the map on the user's current location
-//If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
-//SE Fall 2015
-//Zach Nelson & Hunter Dubel
-function goToCurrLoc(){
-    var currentLocation = document.getElementById("addressSearchBar").value;
-    if (userAddress != ""){
-        codeAddress(userAddress);
-        map.setZoom(15);
-    }
-    else{
-        map.setCenter(mapOptions.initialPosition);
-        map.setZoom(8);
-    }
-}
-
 
 //Predicts the pollution at a location that is not a known facility
 //Added Evan Melquiste, Jeremy Leon, and Richard Levenson
@@ -347,10 +349,10 @@ $(document).ready(function(e){
   });
 
 
-  //Call handleNoGeoLocation() when address button is pressed
+  //Call handleNoGeoLoca() when address button is pressed
   //
   $('.currentlocation-btn').click(function(e) {
-    handleNoGeolocation(mapOptions);
+    goToCurrLoc();
   });
 
 
