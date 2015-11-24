@@ -11,9 +11,9 @@
  
 -->
 
-<div class="prediction-details">
+<div>
 	<h3>Prediction Details:</h3>
 	<hr>
-	<span><strong>Prediction:</strong> </span>
+	<span><strong>Prediction: test</strong> </span>
   <br/>
 </div>  
