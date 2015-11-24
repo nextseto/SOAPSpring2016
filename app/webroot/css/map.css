@@ -26,6 +26,33 @@ footer {
     /* border: 1px solid blue; */
 }
 
+/*Modified by Yilin Yang - Fall 2015 CSC415*/
+/*Screen adjustments to different resolutions*/
+@media (max-width: 320px){
+    .map-wrapper {
+       margin-top: -800px;
+       
+       /* border: 1px solid blue; */
+    }
+    
+    .search-wrapper {
+       margin-top: 200px;
+    }
+    
+}
+
+@media (min-width: 321px) and (max-width: 767px){
+    .map-wrapper {
+       margin-top: -1000px;
+       height: auto;
+       /* border: 1px solid blue; */
+    }
+    
+    .search-wrapper {
+       margin-top: 200px;
+    }
+    
+}
 
 @media (min-width: 768px) {
     

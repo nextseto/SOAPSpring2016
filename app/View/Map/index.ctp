@@ -70,12 +70,6 @@
 
 <div class="container-fluid">
 	<div class="row-fluid">
-		<div class="span9 map-wrapper">
-    			<!--Modified by Yilin Yang and Tim Krajewski to move map to top of map page-->
-    			<!--Width and height determine dimensions of map display-->
-			<div id="map_canvas" style="width:92%; height:60vh; position: relative;"></div>
-    		</div>
-    		
     		<!--Facilities list and search functionality-->
 		<div class="span3 search-wrapper" >
 			<div class="search-filter">
@@ -158,6 +152,10 @@
 			<?php endforeach;	?>
 			</ul>
     		</div>
+                <div class="span9 map-wrapper">
+                        <!--Width and height determine dimensions of map display-->
+                        <div id="map_canvas" style="width:92%; height:60vh; position: relative;"></div>
+                </div>
     	</div>	
 </div>    	
 
