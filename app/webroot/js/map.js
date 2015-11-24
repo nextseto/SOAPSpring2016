@@ -72,8 +72,9 @@ function handleNoGeolocation(mapOptions) {
 //SE Fall 2015
 //Zach Nelson & Hunter Dubel
 function goToCurrLoc(position) {
-  var mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    map.setZoom(6),
+    mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    setInitialPosition(mapOptions);
+    map.setZoom(6);
     map.setCenter(mapOptions.initialPosition);
 
   /*var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
