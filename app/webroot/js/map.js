@@ -81,8 +81,6 @@ function goToCurrLoc(){
         };
       }
 
-}
-
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
