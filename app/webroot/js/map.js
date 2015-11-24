@@ -147,7 +147,7 @@ function pullDetails(inputId) {
     $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-      url: location.origin + '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
+      url: '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
       beforeSend: function() {
         $("div#mapModal div.modal-body").empty();
         $("div#mapModal div.modal-body").addClass("loading");
@@ -224,7 +224,7 @@ function nonSitePredictor() {
 		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-      url: location.origin + '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
+      url: location.origin + '/SOAP/app/webroot/index.php/map/detail/',
       beforeSend: function() {
         $("div#mapModal div.modal-body").empty();
         $("div#mapModal div.modal-body").addClass("loading");
@@ -235,11 +235,9 @@ function nonSitePredictor() {
       }
     });
 	} else {
-		confirm("Error message here.");
+		confirm("Please enter a valid longitude and latitude.");
 	}
 }
-
-
 
 
 //Looks through every object in the facilities array and sets it to visible or 
