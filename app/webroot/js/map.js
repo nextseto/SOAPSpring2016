@@ -75,7 +75,7 @@ function goToCurrLoc(position) {
     mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     setInitialPosition(mapOptions);
     map.setCenter(mapOptions.initialPosition);
-    map.setZoom(1);
+    map.setZoom(12);
 
   /*var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
 
