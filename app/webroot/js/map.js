@@ -67,13 +67,16 @@ function handleNoGeolocation(mapOptions) {
 //If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
 //SE Fall 2015
 //Added by Zach Nelson & Hunter Dubel
+//Modified by Richard Levenson.
 function goToCurrLoc(position) {
     mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     setInitialPosition(mapOptions);
     map.setCenter(mapOptions.initialPosition);
     map.setZoom(15);
     var latbox = document.getElementById('latitudeSearchBar');
+    var lonbox = document.getElementById('longitudeSearchBar');
     latbox.value = position.coords.latitude;
+    lonbox.value = position.coords.longitude;
 }
 
 
