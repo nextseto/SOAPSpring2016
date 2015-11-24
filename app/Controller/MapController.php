@@ -11,6 +11,18 @@
  * to be displayed within the details box. 
  * 
  */
+
+/**
+ *Name: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+ *Course: CSC 415
+ *Semester: Fall 2015
+ *Instructor: Dr. Pulimood
+ *Project Name: Pollution Prediction
+ *Commented out percent_minority field to prevent error in SOAP server integration.
+ *Filename: MapController.php
+ *Last Modified On: 11/23/15 by Richard Levenson, Jeremy Leon, and Evan Melquist
+ * 
+ */
  
 class MapController extends AppController {
 
@@ -24,9 +36,10 @@ class MapController extends AppController {
 	}	
 
 	//percent_minority data was added to the vitual machine database server ubuntu@172.16.100.43 and will need to be integrated with the main SOAP server for the information to be retrieved
+	//percent_minority commented out to prevent error
 	public function detail($facility_id) {
 		
-		$facility_sql = 'SELECT facility_name, owner_name, dangerous_state, is_brownfield, location_id, county, municipality, latitude, longitude, x_coor, y_coor, percent_minority
+		$facility_sql = 'SELECT facility_name, owner_name, dangerous_state, is_brownfield, location_id, county, municipality, latitude, longitude, x_coor, y_coor--, percent_minority
                         FROM "newsoap"."facilities"
                         JOIN "newsoap"."locations" ON "newsoap"."facilities".location_id = "newsoap"."locations".id
                         JOIN ("newsoap"."owned_by" JOIN "newsoap"."owners" ON "newsoap"."owned_by".owner_id = "newsoap"."owners".id) as owned ON "newsoap"."facilities".id = owned.facility_id
