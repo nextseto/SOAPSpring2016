@@ -221,8 +221,7 @@ function nonSitePredictor() {
 	var longitude = document.getElementById("longitudeSearchBar").value;
 	
 	if(latitude !== "" && longitude !== "") {
-	
-       $('#mapModal').modal('show');
+		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
       url: location.origin + '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
@@ -232,14 +231,15 @@ function nonSitePredictor() {
       },
       success: function(response) {
         $("div#mapModal div.modal-body").removeClass("loading");
-        
-
-
-
+        $("div#mapModal div.modal-body").append(response);
+      }
+    });
 	} else {
-		confirm("Please enter a valid longitude and latitude.");
+		confirm("Error message here.");
 	}
 }
+
+
 
 
 //Looks through every object in the facilities array and sets it to visible or 
