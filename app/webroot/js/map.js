@@ -147,7 +147,7 @@ function pullDetails(inputId) {
     $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-      url: '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
+      url: location.origin + '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
       beforeSend: function() {
         $("div#mapModal div.modal-body").empty();
         $("div#mapModal div.modal-body").addClass("loading");
@@ -212,6 +212,23 @@ function goToAddress(){
         map.setZoom(8);
     }
 }
+
+//Centers the map on the user's current location
+//If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
+//SE Fall 2015
+//Zach Nelson & Hunter Dubel
+function goToCurrLoc(){
+    var currentLocation = document.getElementById("addressSearchBar").value;
+    if (userAddress != ""){
+        codeAddress(userAddress);
+        map.setZoom(15);
+    }
+    else{
+        map.setCenter(mapOptions.initialPosition);
+        map.setZoom(8);
+    }
+}
+
 
 //Predicts the pollution at a location that is not a known facility
 //Added Evan Melquiste, Jeremy Leon, and Richard Levenson
@@ -328,6 +345,14 @@ $(document).ready(function(e){
   $('.address-btn').click(function(e) {
     goToAddress();
   });
+
+
+  //Call handleNoGeoLocation() when address button is pressed
+  //
+  $('.currentlocation-btn').click(function(e) {
+    handleNoGeolocation(mapOptions);
+  });
+
 
   //call goToAddress() when enter key is pressed on addressSearchBar
   $('#addressSearchBar').keypress(function(e) {

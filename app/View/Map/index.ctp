@@ -73,14 +73,12 @@
 					<input type="button" class="btn address-btn" value="Go"><br><br>
 
 					<!--Added a section for searching by Latitude, Longitutde, and Current Location written by Zach, Hunter, Evan, Jeremy, and Rich.-->
-                    <h2>Search Coordinates:</h2>
-	                    <form action="coordTest.php" method = "get" >
-							<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> 
-		                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
-							<input type="button" class="btn latlong-btn" value="Search">
-							<input type="button" class="btn currentlocation-btn" value=" Use Current Location">
-						</form>
-					<br><br>
+                <h2>Search Coordinates:</h2>
+					<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> 
+                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
+					<input type="button" class="btn latlong-btn" value="Search">
+					<input type="button" class="btn currentlocation-btn" value=" Use Current Location">
+				<br><br>
 
 				<h2>Search Facilities:</h2>
 					<input class="search-field" id="mainSearchBar" type="text" placeholder="Enter facility name...">
