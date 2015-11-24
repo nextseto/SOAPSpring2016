@@ -68,20 +68,26 @@
 		<div class="span3 search-wrapper" >
     			
 			<div class="search-filter">
+				<center>
 				<h2>Go to Address:</h2>
 					<input class="search-field" id="addressSearchBar" type="text" placeholder="Go to address...">
 					<!--Added a section for searching by Latitude, Longitutde, and Current Location written by Zach, Hunter, Evan, Jeremy, and Rich.-->
+					<br>
 					<input type="button" class="btn address-btn" value="Go"><br><br>
+
                     <h2>Search Coordinates:</h2>
 	                    <form action="coordTest.php" method = "get" >
-							<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> <input type="button" class="btn currentlocation-btn" value=" Use Current Location">
-							<br><br>
+							<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> 
 		                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
-							<input type="button" class="btn latlong-btn" value="Search"> 
+		                    <br>
+							<input type="button" class="btn latlong-btn" value="Search">
+							<input type="button" class="btn currentlocation-btn" value=" Use Current Location">
 						</form>
-					<br>
+					<br><br>
+
 				<h2>Search Facilities:</h2>
 					<input class="search-field" id="mainSearchBar" type="text" placeholder="Enter facility name...">
+					<br>
 					<input type="submit" class="btn search-btn" value="Search" /><br><br>
 				
 				<h2>Filter by County:</h2>
@@ -114,7 +120,7 @@
 				
 				<h2>Filter by Danger Level:</h2>
 				
-				<center> <form action="">
+				<form action="">
 					<div id="levels">
 					<input type="checkbox" class="dangerLevel" name="level1">  1
 					<input type="checkbox" class="dangerLevel" name="level2">  2
