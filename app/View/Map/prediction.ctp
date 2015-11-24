@@ -14,6 +14,8 @@
 <div>
 	<h3>Prediction Details:</h3>
 	<hr>
-	<span><strong>Prediction: test</strong> </span>
+	<span><strong>Latitude:</strong><?php echo $latitude[0]['latitude']; ?><br/></span>
+	<span><strong>Longitude:</strong><?php echo $longitude[0]['longitude']; ?><br/></span>
+	<span><strong>Prediction:</strong><br/></span>
   <br/>
 </div>  

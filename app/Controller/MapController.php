@@ -60,7 +60,9 @@ class MapController extends AppController {
 	}
 
 	//function to display prediction popup
-	public function prediction(){
+	public function prediction($latitude, $longitude){
+		$this->set('latitude', $latitude);
+		$this->set('longitude', $longitude);
 		$this->layout = 'ajax';
 		$this->render('prediction');
 	}

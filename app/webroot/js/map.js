@@ -239,15 +239,15 @@ function nonSitePredictor() {
 		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-      url: location.origin + '/SOAP/app/webroot/index.php/map/prediction/',
-      // beforeSend: function() {
-      //   $("div#mapModal div.modal-body").empty();
-      //   $("div#mapModal div.modal-body").addClass("loading");
-      // },
-      // success: function(response) {
-      //   $("div#mapModal div.modal-body").removeClass("loading");
-      //   $("div#mapModal div.modal-body").append(response);
-      // }
+      url: location.origin + '/SOAP/app/webroot/index.php/map/prediction/' + latitude + longitude,
+      beforeSend: function() {
+        $("div#mapModal div.modal-body").empty();
+        $("div#mapModal div.modal-body").addClass("loading");
+      },
+      success: function(response) {
+        $("div#mapModal div.modal-body").removeClass("loading");
+        $("div#mapModal div.modal-body").append(response);
+      }
     });
 	} else {
 		confirm("Please enter a valid longitude and latitude.");
