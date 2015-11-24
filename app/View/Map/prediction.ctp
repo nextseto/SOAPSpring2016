@@ -14,6 +14,6 @@
 <div class="prediction-details">
 	<h3>Prediction Details:</h3>
 	<hr>
-	<span><strong>Name:</strong> <?php echo "test"; ?><br/></span>
+	<span><strong>Prediction:</strong> </span>
   <br/>
 </div>  
