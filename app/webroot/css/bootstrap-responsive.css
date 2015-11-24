@@ -157,10 +157,15 @@
     margin-left: 0;
   }
   .container {
-    width: auto;
+    width: 75%;
   }
   .row-fluid {
     width: 100%;
+    margin-left:12.5%
+  }
+  .hero-unit{
+    margin-left:12.5%;
+    width:64%;
   }
   .row,
   .thumbnails {
