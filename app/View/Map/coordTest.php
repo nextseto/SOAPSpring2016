@@ -1,5 +1,5 @@
 <!-- 
-	Created by Evan Melquiste.
+	Created by Evan Melquist.
  -->
 <!-- 
  	Modified by: Richard Levenson and Hunter Dubel to include function to call PointAnalysis.exe file for point prediction.
