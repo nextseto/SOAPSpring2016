@@ -63,7 +63,7 @@ function initialize(wrapperId, mapOptions) {
 
 function handleNoGeolocation(mapOptions) { 
   map.setCenter(mapOptions.center);
-  map.setZoom(6);
+  map.setZoom(8);
 }
 
 
@@ -73,19 +73,17 @@ function handleNoGeolocation(mapOptions) {
 //Zach Nelson & Hunter Dubel
 function goToCurrLoc(position) {
   var mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  
-  var options = {
-    zoom: 15,
-    center: mapOptions.initialPosition,
-  };
-  
-  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+    map.setZoom(6),
+    map.setCenter(mapOptions.initialPosition);
+
+  /*var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
 
   var marker = new google.maps.Marker({
       position: coords,
       map: map,
       title:"Current Location"
   });
+*/
 }
 
 
