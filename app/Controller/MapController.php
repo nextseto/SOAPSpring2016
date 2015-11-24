@@ -59,6 +59,12 @@ class MapController extends AppController {
 		$this->render('detail');
 	}
 
+	//function to display prediction popup
+	public function prediction(){
+		$this->layout = 'ajax';
+		$this->render('prediction');
+	}
+
 	//This function is no longer used, since filtering is now done through javascript. 
 	//But we will leave it here in case a future group wants to use it.	
 	public function filter($filter_criteria = "") {
