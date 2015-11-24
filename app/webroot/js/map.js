@@ -47,16 +47,20 @@ function initialize(wrapperId, mapOptions) {
   map = new google.maps.Map(document.getElementById(wrapperId), mapOptions);
 
   //Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
+  //SE F15
+  //Updated by Hunter Dubel
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(goToCurrLoc);
+    }
+    /*navigator.geolocation.getCurrentPosition(function(position) {
       mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);        
       setInitialPosition(mapOptions);
       map.setCenter(mapOptions.initialPosition);
       
     }, function() {
       handleNoGeolocation(mapOptions);
-    });
-  } else {
+    });*/
+   else {
     handleNoGeolocation(mapOptions);
   }
 }
