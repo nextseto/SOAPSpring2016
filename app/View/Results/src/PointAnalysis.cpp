@@ -9,7 +9,7 @@
 // to. If it finds a cluster, all the chemicals for that cluster are accessed and pollution
 // prediction information is displayed. 
 // Filename: PointAnalysis.cpp
-// Last Modified On: 11/10/15
+// Last Modified On: 11/23/15 by Richard Levenson
 
 #include <stdio.h>
 #include <iostream>
@@ -129,7 +129,7 @@ int main(int argc, char *argv[], char *envp[])
 				if(temp[0] == cluster[i].getID()) // if the ID of the facility matches the facility ID of this row, create a chemical with this 
 					                              // information and add it to that facility
 				{
-					Chemical chem = Chemical(temp[1], temp[2], atoi(temp[3].c_str()));
+					Chemical chem = Chemical(temp[1], temp[2], sTOd(temp[3].c_str()));
 					cluster[i].addChemical(chem);
 				}
 			}

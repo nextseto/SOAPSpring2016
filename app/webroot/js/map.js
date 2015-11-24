@@ -20,6 +20,17 @@
  * was also improved, allowing users to search by either a mouse click or enter key. 
 */
 
+/*
+ *Name: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+ *Course: CSC 415
+ *Semester: Fall 2015
+ *Instructor: Dr. Pulimood
+ *Project Name: Pollution Prediction
+ *Description: Added function nonSitePredictor() to make an action when the latitude/longitude search button is pressed.
+ *Filename: map.js
+ *Last Modified On: 11/23/15 by Richard Levenson
+ */
+
 
 var map;
 var mapOptions;
@@ -202,6 +213,8 @@ function goToAddress(){
     }
 }
 
+//Predicts the pollution at a location that is not a known facility
+//Added Evan Melquiste, Jeremy Leon, and Richard Levenson
 function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
 	var longitude = document.getElementById("longitudeSearchBar").value;
@@ -211,6 +224,8 @@ function nonSitePredictor() {
 	} else {
 		confirm("Error message here.");
 	}
+
+
 }
 
 //Looks through every object in the facilities array and sets it to visible or 
