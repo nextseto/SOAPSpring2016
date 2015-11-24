@@ -72,10 +72,22 @@ function handleNoGeolocation(mapOptions) {
 //SE Fall 2015
 //Zach Nelson & Hunter Dubel
 function goToCurrLoc(position) {
-  mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);        
-  setInitialPosition(mapOptions);
-  map.setCenter(mapOptions.initialPosition);
+  var mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  
+  var options = {
+    zoom: 15,
+    center: mapOptions.initialPosition,
+  };
+  
+  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+  var marker = new google.maps.Marker({
+      position: coords,
+      map: map,
+      title:"Current Location"
+  });
 }
+
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
