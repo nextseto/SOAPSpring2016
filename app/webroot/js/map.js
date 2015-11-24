@@ -229,7 +229,7 @@ function goToAddress(){
 
 
 //Predicts the pollution at a location that is not a known facility
-//Added Evan Melquiste, Jeremy Leon, and Richard Levenson
+//Added Evan Melquist, Jeremy Leon, and Richard Levenson
 //Modified by Hunter Dubel
 function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
