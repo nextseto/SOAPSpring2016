@@ -28,7 +28,7 @@
  *Project Name: Pollution Prediction
  *Description: Added function nonSitePredictor() to make an action when the latitude/longitude search button is pressed.
  *Filename: map.js
- *Last Modified On: 11/23/15 by Richard Levenson
+ *Last Modified On: 11/23/15 by Hunter Dubel
  */
 
 
@@ -65,6 +65,28 @@ function handleNoGeolocation(mapOptions) {
   map.setCenter(mapOptions.center);
   map.setZoom(8);
 }
+
+
+//Centers the map on the user's current location.
+//If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
+//SE Fall 2015
+//Zach Nelson & Hunter Dubel
+function goToCurrLoc(position) {
+    mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    setInitialPosition(mapOptions);
+    map.setCenter(mapOptions.initialPosition);
+    map.setZoom(15);
+
+  /*var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+  var marker = new google.maps.Marker({
+      position: coords,
+      map: map,
+      title:"Current Location"
+  });
+*/
+}
+
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
@@ -213,20 +235,33 @@ function goToAddress(){
     }
 }
 
+
 //Predicts the pollution at a location that is not a known facility
 //Added Evan Melquiste, Jeremy Leon, and Richard Levenson
+//Modified by Hunter Dubel
 function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
 	var longitude = document.getElementById("longitudeSearchBar").value;
 	
 	if(latitude !== "" && longitude !== "") {
-		confirm(latitude + " " + longitude);
+		    $('#mapModal').modal('show');
+    $.ajax({
+      type: 'get',
+      url: location.origin + '/SOAP/app/webroot/index.php/map/detail/',
+      beforeSend: function() {
+        $("div#mapModal div.modal-body").empty();
+        $("div#mapModal div.modal-body").addClass("loading");
+      },
+      success: function(response) {
+        $("div#mapModal div.modal-body").removeClass("loading");
+        $("div#mapModal div.modal-body").append(response);
+      }
+    });
 	} else {
-		confirm("Error message here.");
+		confirm("Please enter a valid longitude and latitude.");
 	}
-
-
 }
+
 
 //Looks through every object in the facilities array and sets it to visible or 
 //not visible according to filter parameters (filterCounty and dgLevelsVisible)
@@ -316,6 +351,18 @@ $(document).ready(function(e){
   $('.address-btn').click(function(e) {
     goToAddress();
   });
+
+
+  //Call handleNoGeoLoca() when address button is pressed
+  //
+  $('.currentlocation-btn').click(function(e) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(goToCurrLoc);
+    }else {
+      error('Geo Location is not supported');
+      }
+  });
+
 
   //call goToAddress() when enter key is pressed on addressSearchBar
   $('#addressSearchBar').keypress(function(e) {
