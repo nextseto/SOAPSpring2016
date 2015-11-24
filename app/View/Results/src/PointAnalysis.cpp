@@ -9,7 +9,7 @@
 // to. If it finds a cluster, all the chemicals for that cluster are accessed and pollution
 // prediction information is displayed. 
 // Filename: PointAnalysis.cpp
-// Last Modified On: 11/10/15
+// Last Modified On: 11/23/15 by Richard Levenson
 
 #include <stdio.h>
 #include <iostream>
