@@ -66,7 +66,7 @@ function handleNoGeolocation(mapOptions) {
   map.setZoom(6);
 }
 
-
+/*
 //Centers the map on the user's current location.
 //If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
 //SE Fall 2015
@@ -80,7 +80,7 @@ function goToCurrLoc(){
           handleNoGeolocation(mapOptions);
         };
       }
-
+*/
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
