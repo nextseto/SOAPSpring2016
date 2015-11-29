@@ -8,13 +8,8 @@
 
 <?php
 	// Runs the PointAnalysis executable file to find the cluster info of the point
-	// Takes the latitude and longitude strings as input parameters.
+	// Takes the latitude and longitude strings as input parameters and returns the cluster information.
 	function runPointAnalysis($lat, $long){
-		//$lat = strip_tags($_GET[latitudeSearchBar]);
-		//$lon = strip_tags($_GET[longitudeSearchBar];
-		
-		//echo ("Latitude:" .$lat. "<BR>Longitude:" .$lon.);
-		//exec("SOAP/app/View/Results/src/PointAnalysis " . $lat . " " . $long , $clusterInfo);
 		exec("SOAP/app/View/Results/src/PointAnalysis $lat $long" , $clusterInfo);
 		return $clusterInfo;
 	}
