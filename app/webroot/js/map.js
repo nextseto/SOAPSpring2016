@@ -28,7 +28,7 @@
  *Project Name: Pollution Prediction
  *Description: Added function nonSitePredictor() to make an action when the latitude/longitude search button is pressed.
  *Filename: map.js
- *Last Modified On: 11/23/15 by Hunter Dubel
+ *Last Modified On: 11/29/15 by Jeremy Leon
  */
 
 
@@ -230,12 +230,12 @@ function goToAddress(){
 
 //Predicts the pollution at a location that is not a known facility
 //Added Evan Melquist, Jeremy Leon, and Richard Levenson
-//Modified by Hunter Dubel
+//Modified by Hunter Dubel and Jeremy Leon
 function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
 	var longitude = document.getElementById("longitudeSearchBar").value;
 	
-	if(latitude !== "" && longitude !== "") {
+	if(latitude !== "" && longitude !== ""  && typeof latitude === 'number' && typeof longitude === 'number') {
 		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
@@ -250,7 +250,7 @@ function nonSitePredictor() {
       }
     });
 	} else {
-		confirm("Please enter a valid longitude and latitude.");
+		alert("Please enter a valid longitude and latitude.");
 	}
 }
 
