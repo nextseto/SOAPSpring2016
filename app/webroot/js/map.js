@@ -235,7 +235,7 @@ function nonSitePredictor() {
 	var latitude = document.getElementById("latitudeSearchBar").value;
 	var longitude = document.getElementById("longitudeSearchBar").value;
 	
-	if(latitude !== "" && longitude !== ""  && typeof parseInt(latitude) === 'number' && parseInt(longitude) === 'number') {
+	if(latitude !== "" && longitude !== ""  && /^\d+$/.test(latitude) && /^\d+$/.test(longitude)) {
 		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
