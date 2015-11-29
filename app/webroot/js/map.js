@@ -232,10 +232,10 @@ function goToAddress(){
 //Added Evan Melquist, Jeremy Leon, and Richard Levenson
 //Modified by Hunter Dubel and Jeremy Leon
 function nonSitePredictor() {
-	var latitude = +document.getElementById("latitudeSearchBar").value;
-	var longitude = +document.getElementById("longitudeSearchBar").value;
+	var latitude = document.getElementById("latitudeSearchBar").value;
+	var longitude = document.getElementById("longitudeSearchBar").value;
 	
-	if(latitude !== "" && longitude !== ""  && typeof latitude === 'number' && typeof longitude === 'number') {
+	if(latitude !== "" && longitude !== ""  && typeof parseInt(latitude) === 'number' && parseInt(longitude) === 'number') {
 		    $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
