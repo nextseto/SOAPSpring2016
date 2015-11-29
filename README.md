@@ -32,8 +32,8 @@ Stage V- Implementation:
 [Link](https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Implementation.pdf)
 
 Stage VIa - Testing:
-[Link] (https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Presentation.pdf)
 
 Stage VIb - Presentation:
+[Link] (https://github.com/TCNJSEteam4/SOAP/blob/master/Documentation/Presentation.pdf)
 
 Stage VII - Final Project Report:
