@@ -1,8 +1,17 @@
 <!-- 
-	Created by Evan Melquist.
- -->
-<!-- 
- 	Modified by: Richard Levenson and Hunter Dubel to include function to call PointAnalysis.exe file for point prediction.
+	Created By: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+	Course: CSC 415
+	Semester: Fall 2015
+	Instructor: Dr. Pulimood
+	Project Name: Pollution Prediction
+	Description: Represents the html code for the prediction popup on custom coordinates.
+	Filename: prediction.ctp
+	Last Modified On: 12/3/15 by Evan Melquist, Jeremy Leon, Zach Nelson, and Richard Levenson
+
+ 	INFORMATION FOR FUTURE SOAP TEAMS:
+	This file contains a sample of code that could potentially run the PointAnalysis c++ executable file which analyzes the 
+	coordinates with the clusters formed by the clustering algorithm.  It has not yet been implemented in SOAP but should
+	in the future be called from SOAP/app/webroot/js/map.js file and passed the latitude and longitude.
  -->
  
 

@@ -21,14 +21,32 @@
 */
 
 /*
- *Name: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
- *Course: CSC 415
- *Semester: Fall 2015
- *Instructor: Dr. Pulimood
- *Project Name: Pollution Prediction
- *Description: Added function nonSitePredictor() to make an action when the latitude/longitude search button is pressed.
- *Filename: map.js
- *Last Modified On: 11/29/15 by Jeremy Leon
+ * Name: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+ * Course: CSC 415
+ * Semester: Fall 2015
+ * Instructor: Dr. Pulimood
+ * Project Name: Pollution Prediction
+ * Description: Added function nonSitePredictor() to make an action when the latitude/longitude search button is pressed.
+ * Filename: map.js
+ * Last Modified On: 12/3/15 by Jeremy Leon, Zach Nelson, Evan Melquist, and Richard Levenson
+ * 
+ * INFORMATION FOR FUTURE SOAP TEAMS:
+ *
+ * As of Fall 2015 the "percent minorities" column is not in the current implementation of the SOAP databases,
+ * so it causes errors when trying to access it. 
+ *
+ * The nonSitePredictor() function below does not work to correctly display any information on the modal that pops up.
+ * This function attempts to open the SOAP/app/view/map/prediction.ctp HTML file in a modal by first sending the
+ * entered latitude and longitude to the MapController.  If you are trying to fix this we would recommend looking
+ * for any documentation available for the AJAX function of JQuery and the CakePHP AppController and attempting to 
+ * re-engineer the existing working modal pop up that occurs when clicking on a facility on the map.  We did not have
+ * enough time to do this fully.
+ *
+ * After getting the pop up working in general, the SOAP/app/View/Map/coordTest.php file contains a sample of code that
+ * could potentially run the PointAnalysis c++ executable file which analyzes the coordinates with the clusters formed
+ * by the clustering algorithm.
+ * 
+ */
  */
 
 
