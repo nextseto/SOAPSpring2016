@@ -13,14 +13,26 @@
  */
 
 /**
- *Name: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
- *Course: CSC 415
- *Semester: Fall 2015
- *Instructor: Dr. Pulimood
- *Project Name: Pollution Prediction
- *Commented out percent_minority field to prevent error in SOAP server integration.
- *Filename: MapController.php
- *Last Modified On: 11/23/15 by Richard Levenson, Jeremy Leon, and Evan Melquist
+ * Modified by: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+ * Course: CSC 415
+ * Semester: Fall 2015
+ * Instructor: Dr. Pulimood
+ * Project Name: Pollution Prediction
+ * Commented out percent_minority field to prevent error in SOAP server integration.
+ * Filename: MapController.php
+ * Last Modified On: 12/3/15 by Richard Levenson, Jeremy Leon, Zach Nelson, and Evan Melquist
+ * 
+ *
+ * INFORMATION FOR FUTURE SOAP TEAMS:
+ *
+ * As of Fall 2015 the "percent minorities" column is not in the current implementation of the SOAP databases,
+ * so it causes errors when trying to access it. 
+ *
+ * The prediction() function below does not work to display any information on the modal that pops up.  This function
+ * is called from nonSitePredictor() of SOAP/app/webroot/js/map.js.  If you are trying to fix this we would recommend
+ * looking for any documentation available for the AJAX function of JQuery and attempting to re-engineer the existing
+ * working modal pop up that occurs when clicking on a facility on the map.  We did not have enough time to do this 
+ * fully.
  * 
  */
  
