@@ -11,6 +11,30 @@
  * to be displayed within the details box. 
  * 
  */
+
+/**
+ * Modified by: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+ * Course: CSC 415
+ * Semester: Fall 2015
+ * Instructor: Dr. Pulimood
+ * Project Name: Pollution Prediction
+ * Commented out percent_minority field to prevent error in SOAP server integration.
+ * Filename: MapController.php
+ * Last Modified On: 12/3/15 by Richard Levenson, Jeremy Leon, Zach Nelson, and Evan Melquist
+ * 
+ *
+ * INFORMATION FOR FUTURE SOAP TEAMS:
+ *
+ * As of Fall 2015 the "percent minorities" column is not in the current implementation of the SOAP databases,
+ * so it causes errors when trying to access it. 
+ *
+ * The prediction() function below does not work to display any information on the modal that pops up.  This function
+ * is called from nonSitePredictor() of SOAP/app/webroot/js/map.js.  If you are trying to fix this we would recommend
+ * looking for any documentation available for the AJAX function of JQuery and attempting to re-engineer the existing
+ * working modal pop up that occurs when clicking on a facility on the map.  We did not have enough time to do this 
+ * fully.
+ * 
+ */
  
 class MapController extends AppController {
 
@@ -24,9 +48,10 @@ class MapController extends AppController {
 	}	
 
 	//percent_minority data was added to the vitual machine database server ubuntu@172.16.100.43 and will need to be integrated with the main SOAP server for the information to be retrieved
+	//percent_minority commented out to prevent error
 	public function detail($facility_id) {
 		
-		$facility_sql = 'SELECT facility_name, owner_name, dangerous_state, is_brownfield, location_id, county, municipality, latitude, longitude, x_coor, y_coor, percent_minority
+		$facility_sql = 'SELECT facility_name, owner_name, dangerous_state, is_brownfield, location_id, county, municipality, latitude, longitude, x_coor, y_coor--, percent_minority
                         FROM "newsoap"."facilities"
                         JOIN "newsoap"."locations" ON "newsoap"."facilities".location_id = "newsoap"."locations".id
                         JOIN ("newsoap"."owned_by" JOIN "newsoap"."owners" ON "newsoap"."owned_by".owner_id = "newsoap"."owners".id) as owned ON "newsoap"."facilities".id = owned.facility_id
@@ -44,6 +69,14 @@ class MapController extends AppController {
 		
 		$this->layout = 'ajax';
 		$this->render('detail');
+	}
+
+	//function to display prediction popup
+	public function prediction($latitude, $longitude){
+		$this->set('latitude', $latitude);
+		$this->set('longitude', $longitude);
+		$this->layout = 'ajax';
+		$this->render('prediction');
 	}
 
 	//This function is no longer used, since filtering is now done through javascript. 

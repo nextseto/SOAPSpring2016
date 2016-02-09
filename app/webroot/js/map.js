@@ -7,7 +7,6 @@
  * $(document).ready block seen at the bottom of the file. 
 */
 
-<<<<<<< HEAD
 /*
  * Modified by: Dylan Wulf, Graham Roberts, Angela Huang, and Trevor Fullman 
  *
@@ -21,13 +20,41 @@
  * was also improved, allowing users to search by either a mouse click or enter key. 
 */
 
-=======
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
+/*
+ * Name: Evan Melquist, Zachary Nelson, Richard Levenson, Jeremy Leon and Hunter Dubel
+ * Course: CSC 415
+ * Semester: Fall 2015
+ * Instructor: Dr. Pulimood
+ * Project Name: Pollution Prediction
+ * Description: Added function nonSitePredictor() to make an action when the latitude/longitude search button is pressed.
+ * Filename: map.js
+ * Last Modified On: 12/3/15 by Jeremy Leon, Zach Nelson, Evan Melquist, and Richard Levenson
+ * 
+ * INFORMATION FOR FUTURE SOAP TEAMS:
+ *
+ * As of Fall 2015 the "percent minorities" column is not in the current implementation of the SOAP databases,
+ * so it causes errors when trying to access it. 
+ *
+ * The nonSitePredictor() function below does not work to correctly display any information on the modal that pops up.
+ * This function attempts to open the SOAP/app/view/map/prediction.ctp HTML file in a modal by first sending the
+ * entered latitude and longitude to the MapController.  If you are trying to fix this we would recommend looking
+ * for any documentation available for the AJAX function of JQuery and the CakePHP AppController and attempting to 
+ * re-engineer the existing working modal pop up that occurs when clicking on a facility on the map.  We did not have
+ * enough time to do this fully.
+ *
+ * After getting the pop up working in general, the SOAP/app/View/Map/coordTest.php file contains a sample of code that
+ * could potentially run the PointAnalysis c++ executable file which analyzes the coordinates with the clusters formed
+ * by the clustering algorithm.
+ * 
+ */
+ */
+
+
 var map;
 var mapOptions;
 var facilities;
 var markers = {};
-<<<<<<< HEAD
+
 var filterCounty = "ALL_COUNTIES";
 var filterFacilityName = "";
 var dgLevelsVisible = [true, true, true, true, true];
@@ -37,46 +64,39 @@ function initialize(wrapperId, mapOptions) {
   geocoder = new google.maps.Geocoder();  //For zoom and address search
   map = new google.maps.Map(document.getElementById(wrapperId), mapOptions);
 
-=======
-
-function initialize(wrapperId, mapOptions) {
-  map = new google.maps.Map(document.getElementById(wrapperId), mapOptions);
-  
-  google.maps.event.addListener(map, 'tilesloaded', function() {
-    $(document).on("click", "li.facility-list-item", function(e) {
-      var facilityId = $(this).attr("id");
-      
-      map.setCenter(markers[facilityId].getPosition());
-      map.setZoom(15);
-      
-      e.stopPropagation();
-      e.preventDefault();
-      
-      new google.maps.event.trigger(markers[facilityId], 'click');
-    });
-  });
-  
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
   //Try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);        
-      setInitialPosition(mapOptions);
-      map.setCenter(mapOptions.initialPosition);
-      
-    }, function() {
-      handleNoGeolocation(mapOptions);
-    });
-  } else {
+  //SE F15
+  //Updated by Hunter Dubel
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(goToCurrLoc);
+    }
+   else {
     handleNoGeolocation(mapOptions);
   }
 }
 
-<<<<<<< HEAD
 function handleNoGeolocation(mapOptions) { 
   map.setCenter(mapOptions.center);
   map.setZoom(8);
 }
+
+
+//Centers the map on the user's current location.
+//If nothing is entered, zooms out and centers on initial position (Trenton, NJ)
+//SE Fall 2015
+//Added by Zach Nelson & Hunter Dubel
+//Modified by Richard Levenson.
+function goToCurrLoc(position) {
+    mapOptions.initialPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    setInitialPosition(mapOptions);
+    map.setCenter(mapOptions.initialPosition);
+    map.setZoom(15);
+    var latbox = document.getElementById('latitudeSearchBar');
+    var lonbox = document.getElementById('longitudeSearchBar');
+    latbox.value = position.coords.latitude;
+    lonbox.value = position.coords.longitude;
+}
+
 
 //Finds lat/long of address and centers map on it
 //Added by Trevor Fullman
@@ -90,13 +110,6 @@ function codeAddress(address) {
     });
   }
 
-=======
-function handleNoGeolocation(mapOptions) {
-  map.setCenter(mapOptions.center);
-  map.setZoom(9);
-}
-
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
 function setInitialPosition(mapOptions) {
   
   var infowindow = new google.maps.InfoWindow({
@@ -142,11 +155,7 @@ function setFacilityMarker(facilityInfo) {
   var marker = new google.maps.Marker({
     position: facilityPosition,
     map: map,
-<<<<<<< HEAD
     icon: '/SOAP/app/webroot/img/map/'+iconType,
-=======
-    icon: '/cabect/SOAP/app/webroot/img/map/'+iconType,
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
     title: facilityInfo.facility_name
   });
   
@@ -170,11 +179,7 @@ function pullDetails(inputId) {
     $('#mapModal').modal('show');
     $.ajax({
       type: 'get',
-<<<<<<< HEAD
       url: location.origin + '/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
-=======
-      url: location.origin + '/cabect/SOAP/app/webroot/index.php/map/detail/'+ realFacilityId,
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
       beforeSend: function() {
         $("div#mapModal div.modal-body").empty();
         $("div#mapModal div.modal-body").addClass("loading");
@@ -186,7 +191,7 @@ function pullDetails(inputId) {
     });
 }
 
-<<<<<<< HEAD
+
 //Sets handlers for checkbox clicks and sets all boxes to be checked
 function checkboxSetup() {
 
@@ -240,6 +245,34 @@ function goToAddress(){
     }
 }
 
+
+//Predicts the pollution at a location that is not a known facility
+//Added Evan Melquist, Jeremy Leon, and Richard Levenson
+//Modified by Hunter Dubel and Jeremy Leon
+function nonSitePredictor() {
+	var latitude = document.getElementById("latitudeSearchBar").value;
+	var longitude = document.getElementById("longitudeSearchBar").value;
+	
+	if(latitude !== "" && longitude !== ""  && /^-?\d*\.{0,1}\d+$/.test(latitude) && /^-?\d*\.{0,1}\d+$/.test(longitude)) {
+		    $('#mapModal').modal('show');
+    $.ajax({
+      type: 'get',
+      url: location.origin + '/SOAP/app/webroot/index.php/map/prediction/' + latitude + longitude,
+      beforeSend: function() {
+        $("div#mapModal div.modal-body").empty();
+        $("div#mapModal div.modal-body").addClass("loading");
+      },
+      success: function(response) {
+        $("div#mapModal div.modal-body").removeClass("loading");
+        $("div#mapModal div.modal-body").append(response);
+      }
+    });
+	} else {
+		alert("Please enter a valid longitude and latitude.");
+	}
+}
+
+
 //Looks through every object in the facilities array and sets it to visible or 
 //not visible according to filter parameters (filterCounty and dgLevelsVisible)
 //Added by Dylan Wulf
@@ -287,12 +320,6 @@ $(document).ready(function(e){
   mapOptions = {
     center: new google.maps.LatLng(40.2679, -74.779), //Default location: NJ, USA
     zoom: 8,
-=======
-$(document).ready(function(e){
-  mapOptions = {
-    center: new google.maps.LatLng(40.2679, -74.779),
-    zoom: 9,
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
     initialPositionImage: 'http://google-maps-icons.googlecode.com/files/home.png',
     currentPositionLabel: 'Current Position',
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -300,7 +327,6 @@ $(document).ready(function(e){
   
   initialize("map_canvas", mapOptions);
   
-<<<<<<< HEAD
   facilities = window.app.facilities; //window.app.facilities is created in View/Map/index.ctp
   
   for (i = 0; i < facilities.length; i++) { 
@@ -326,10 +352,27 @@ $(document).ready(function(e){
   //And set up event handlers for checkboxes
   checkboxSetup();
   
+  //
+  $('.latlong-btn').click(function(e) {
+    nonSitePredictor();
+  });
+  
   //Call goToAddress() when address button is pressed
   $('.address-btn').click(function(e) {
     goToAddress();
   });
+
+
+  //Call handleNoGeoLoca() when address button is pressed
+  //
+  $('.currentlocation-btn').click(function(e) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(goToCurrLoc);
+    }else {
+      error('Geo Location is not supported');
+      }
+  });
+
 
   //call goToAddress() when enter key is pressed on addressSearchBar
   $('#addressSearchBar').keypress(function(e) {
@@ -346,25 +389,3 @@ $(document).ready(function(e){
    	if (e.which == 13) facilityNameSearch();
   });
 });
-
-=======
-  facilities = window.app.facilities;
-  
-  for (i = 0; i < facilities.length; i++) { 
-    setFacilityMarker(facilities[i])
-  }
-  
-  $('.search-btn').click(function(e){
-    var filter = $('#mainSearchBar').val();
-    
-    $.ajax({
-      type: 'get',
-      url: location.origin + '/cabect/SOAP/app/webroot/index.php/map/filter/'+ filter,
-      success: function(response) {
-        $(".search-wrapper ul").empty();
-        $(".search-wrapper ul").append(response);
-      }
-    });
-  });
-});
->>>>>>> 4df02f52e194229dcab9cfe9608adce6a5c09ff2
