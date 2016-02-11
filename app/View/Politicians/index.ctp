@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php $this->Html->script('jquery'); ?>
-        <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
+        <script type="text/javascript" src="/cabect/SOAP/app/webroot/js/userQuery.js"></script>
     </head>
     <body>
         <div class="span2">

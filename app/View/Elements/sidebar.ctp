@@ -1,3 +1,5 @@
+<!--Andrew Preuss 11/9, Fixed position does not work well when viewing the site on mobile, doesn't actually look very good on the regular site either.  Can change the position attribute so that it is anchored to the page rather than the viewspace or change the size so that it is not contantly in the way of the user's view.  Will implement this once the VM is working. -->
+
 <div class="well sidebar-nav" style="position:fixed; left:30px;">
 	<ul class="nav nav-list" style="height: 100%">
 		<li class="nav-header">Pollution</li>

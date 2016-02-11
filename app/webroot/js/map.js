@@ -1,4 +1,4 @@
-/*created by: Vitor Machado
+/* Created by: Vitor Machado
  *
  * map.js represents the code reponsible for generating the map seen on the Map page. The map is initialized at the current 
  * latitude and logitude of the user's location. Information regarding the x and y coordinates necessary for creating the markers
