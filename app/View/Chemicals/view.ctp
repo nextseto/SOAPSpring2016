@@ -1,4 +1,7 @@
 <!-- File: /app/View/Chemicals/view.ctp Test change is up here -->
+
+<!-- Andrew Preuss 11/9, Chemical List does not show up well on mobile, can narrow the size of the table so that smaller screens do not mess up the table formatting. -->
+<!-- Andrew Preuss 11/9, changinging the font size would also be an easy fix to solve the problem of table formatting on smaller screens. -->
 <div class=span2>
 	 <?php echo $this->element('sidebar'); ?> 
 </div>
@@ -12,13 +15,13 @@
             margin:5px;
         }
         h1{
-            font-size:25px;
+            font-size:12px;
         }
         h2{
-            font-size:20px;
+            font-size:12px;
         }
         h3{
-            font-size:15px;
+            font-size:12px;
         }
         h4{
             font-size:12px;
