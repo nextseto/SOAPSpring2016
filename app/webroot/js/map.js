@@ -47,6 +47,7 @@
  * 
  */
 
+//NOTE THE USE CURRENT LOCATION FEATURE DOES NOT WORK IN FIREFOX
 
 var map;
 var mapOptions;
