@@ -6,7 +6,6 @@
 // with the Google Maps API to generate the map itself. Certain considerations were made to ensure that coordinates
 // retrieved from the database properly align with corresponding locations on the map.
 //
-
 /*
 * Modified by: Angela Huang, Graham Robers, Dylan Wulf, and Trevor Fullman
 * SE: Spring 2015
@@ -20,7 +19,6 @@
 	
 	
 	foreach($map_info as $facility) {
-
 		// Only generate marker if there are coordinates to use for plotting
 		if($facility[0]['x_coor'] != NULL && $facility[0]['y_coor'] != NULL) {
 		
@@ -65,25 +63,28 @@
             </div>
         </div>
 
-	
-
-
 <div class="container-fluid">
 	<div class="row-fluid">
-    		<!--Facilities list and search functionality-->
 		<div class="span3 search-wrapper" >
+    			
 			<div class="search-filter">
 				<h2>Go to Address:</h2>
 					<input class="search-field" id="addressSearchBar" type="text" placeholder="Go to address...">
 					<input type="button" class="btn address-btn" value="Go"><br><br>
+
+					<!--Added a section for searching by Latitude, Longitutde, and Current Location written by Zach, Hunter, Evan, Jeremy, and Rich.-->
+                <h2>Search Coordinates:</h2>
+					<input class="search-field" id="latitudeSearchBar" type="text" placeholder="Latitude..."> 
+                    <input class="search-field" id="longitudeSearchBar" type="text" placeholder="Longitude..."> 
+					<input type="button" class="btn latlong-btn" value="Search">
+					<input type="button" class="btn currentlocation-btn" value=" Use Current Location">
+				<br><br>
+
 				<h2>Search Facilities:</h2>
-					<!--Search bar-->
 					<input class="search-field" id="mainSearchBar" type="text" placeholder="Enter facility name...">
-					<!--Search button-->
-					<input type="button" class="btn search-btn" value="Search" /><br><br>
+					<input type="submit" class="btn search-btn" value="Search" /><br><br>
 				
 				<h2>Filter by County:</h2>
-				
 				<select name="County" onchange="filterByCounty(this.value)">
 					<option value="ALL_COUNTIES">---------</option>
 					<option value="Atlantic">Atlantic</option>
@@ -112,7 +113,7 @@
 				
 				<h2>Filter by Danger Level:</h2>
 				
-				<center> <form action="">
+				<center><form action="">
 					<div id="levels">
 					<input type="checkbox" class="dangerLevel" name="level1">  1
 					<input type="checkbox" class="dangerLevel" name="level2">  2
@@ -152,27 +153,23 @@
 			<?php endforeach;	?>
 			</ul>
     		</div>
-                <div class="span9 map-wrapper">
-                        <!--Width and height determine dimensions of map display-->
-                        <div id="map_canvas" style="width:92%; height:60vh; position: relative;"></div>
-                </div>
-    	</div>	
-</div>    	
+    		<div class="span9 map-wrapper">
+			<div id="map_canvas" style="width:100%; height:80vh"></div>
+    		</div>
+  	</div>
+</div>
 
 <div class="modal fade" id="mapModal" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					<span aria-hidden="true">×</span>
-				</button>
-      			</div>
-      			<div class="modal-body">							
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">							
 		  	
 			</div>
-			<div class="modal-footer">
-				
-			</div>
-    		</div>
-  	</div>
+		<div class="modal-footer"></div>
+    </div>
+  </div>
 </div>
+

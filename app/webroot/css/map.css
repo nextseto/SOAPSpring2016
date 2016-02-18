@@ -1,5 +1,4 @@
-/*
- * CSS style sheet for the map page.
+SS style sheet for the map page.
  * Modified by Dylan Wulf to correctly style
  * the added filtering elements.
  */
@@ -34,33 +33,6 @@ footer {
     /* border: 1px solid blue; */
 }
 
-/*Modified by Yilin Yang - Fall 2015 CSC415*/
-/*Screen adjustments to different resolutions*/
-@media (max-width: 320px){
-    .map-wrapper {
-       margin-top: -800px;
-       
-       /* border: 1px solid blue; */
-    }
-    
-    .search-wrapper {
-       margin-top: 200px;
-    }
-    
-}
-
-@media (min-width: 321px) and (max-width: 767px){
-    .map-wrapper {
-       margin-top: -1000px;
-       height: auto;
-       /* border: 1px solid blue; */
-    }
-    
-    .search-wrapper {
-       margin-top: 200px;
-    }
-    
-}
 
 @media (min-width: 768px) {
     
@@ -152,9 +124,7 @@ hr {
 }
 
 .modal.fade {
-  /*z-index: -1;*/
-  /*Modified by Yilin Yang - Fall 2015 CSC415*/
-  /*The z-index sets the modal menu behind everything, making it unreadable. Removing it should have fixed it.*/
+  z-index: -1;
   transition: none;
 }
 
@@ -238,3 +208,4 @@ a.page-link {
 .search-wrapper ul li:hover {
   background-color: #92986d;
 }
+
