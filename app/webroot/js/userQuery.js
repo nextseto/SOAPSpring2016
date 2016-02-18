@@ -129,7 +129,7 @@ function filterSearch(event, modelName, orderBy, offsetNum, limit){
         });
         $.ajax({
             type: "POST",
-            url: "/SOAP/index.php/" + modelName + "/loadTable",
+            url: "/cabect/SOAP/index.php/" + modelName + "/loadTable",
             data: {
                 limit: limit,
                 order: orderBy,
@@ -202,7 +202,7 @@ function filterSearchPoliticians(event, modelName, orderBy, offsetNum, limit){
         });
         $.ajax({
             type: "POST",
-            url: "/SOAP/index.php/" + modelName + "/loadTable",
+            url: "/cabect/SOAP/index.php/" + modelName + "/loadTable",
             data: {
                 limit: limit,
                 order: orderBy,
