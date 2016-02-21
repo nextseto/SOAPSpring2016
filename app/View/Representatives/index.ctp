@@ -11,9 +11,27 @@
     <a href= "http://www.njleg.state.nj.us/districts/njmap210.html" target="_blank"><img src="<?php echo $this->webroot; ?>img/StatewideOverview_Legal.jpg" style="width:150px; height:250px"></a>
 </div>
         </div>
-        <div class="span9">
-	 <div style= "text-align:center;">
- 	<h1>Assembly</h1></div>
+  <div class="span9">
+    <div style= "text-align:center;">
+<!-- This is renders the page header -->
+ <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+<!-- This is the main header if the page --> 
+                        <h1>Welcome to Assembly Page</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+<!-- this explains what features the page has -->
+                        <p contenteditable="true" class="text-center">
+			You can search any New Jersey assembly member's name to find that assembly member. Each assembly member  has a picture, their name, the year they were elected, their political affiliation, and district number. 
+</p><br>
+                    </div>
+                </div>
+            </div>
+        </div> 
 		<!--This includes the search bar if the user is looking for a particular member of the Assembly. It also has an "options" choice if the user would like to make a more advanced search-->
             <div style="text-align:center;"><input style="width:70%; padding-left:18px; background: white no-repeat scroll left center url('<?php echo $this->webroot; ?>img/icon_search.png');" id="mainSearchBar" type="text" placeholder="Search assembly by name or click 'options' for more advanced searching."><a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin-left:-60px; margin-top:-7px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a></div>
            <div id="options" style="display:none; color:white; margin-bottom:20px;">
