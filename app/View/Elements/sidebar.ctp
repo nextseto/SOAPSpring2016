@@ -13,8 +13,9 @@
 		
 		<!--These are the Categories the user will see on the sidebar while on the Politics page.-->
 		<li class="nav-header"><font color="#0B614B">Sites</font></li>
-		<li>		
-			<?php echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> 			
+		<li>	
+<!-- this redundent I put the chemicals link in Pollution 	
+			<?php// echo $this->Html->link('Chemicals',array('controller' => 'chemicals', 'action' => 'index', 'full_base' => true)); ?> --> 			
 		</li>
 		<li>
 		</li>
@@ -46,7 +47,8 @@
 		<li>	
                         <?php echo $this->Html->link('Submit a Post',array('controller' => 'blogs', 'action' => 'add', 'full_base' => true)); ?>
 		<li>
-			<?php echo $this->Html->link('Advocacy Groups',array('controller' => 'advocacygroups', 'action' => 'index', 'full_base' => true)); ?>
+<!-- this was put in put in politiics 
+			<?php// echo $this->Html->link('Advocacy Groups',array('controller' => 'advocacygroups', 'action' => 'index', 'full_base' => true)); ?>-->
 		</li>
 	</ul>
 </div>
