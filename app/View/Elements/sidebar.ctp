@@ -26,11 +26,13 @@
 		<!-- <li class="active"> -->
 		<!-- The sidebar links for the politicians were broken. Fixed 10/12. -Kate Evans -->
 		<li>
-
 			<?php echo $this->Html->link('Senators',array('controller' => 'senators', 'action' => 'index', 'full_base' => true)); ?> 	
 		</li>
 		<li>
-			<?php echo $this->Html->link('Assembly',array('controller' => 'representatives', 'action' => 'index', 'full_base' => true)); ?> 	
+		 	<?php echo $this->Html->link('Assembly',array('controller' => 'representatives', 'action' => 'index', 'full_base' => true)); ?> 
+		</li>
+		<li>
+			<?php echo $this->Html->link('Advocacy Groups',array('controller' => 'advocacygroups', 'action' => 'index', 'full_base' => true)); ?>  
 		</li>
 		<!--<li>
 			<a href="politicians">Lobbyists</a>

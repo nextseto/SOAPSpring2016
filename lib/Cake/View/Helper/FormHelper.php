@@ -1621,7 +1621,7 @@ class FormHelper extends AppHelper {
 		$onClick = 'document.' . $formName . '.submit();';
 		if ($confirmMessage) {
 			$confirmMessage = str_replace(array("'", '"'), array("\'", '\"'), $confirmMessage);
-			$options['onclick'] = "if (confirm('{$confirmMessage}')) { {$onClick} }";
+                        $options['onclick'] = "if (confirm('confirm')){{$onClick}}";
 		} else {
 			$options['onclick'] = $onClick;
 		}
