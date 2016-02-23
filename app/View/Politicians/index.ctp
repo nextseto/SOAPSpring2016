@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php $this->Html->script('jquery'); ?>
-        <script type="text/javascript" src="/cabect/SOAP/app/webroot/js/userQuery.js"></script>
+        <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
     </head>
     <body>
         <div class="span2">
@@ -19,7 +19,7 @@
 
             </style>
             <h2>Explore the NJ State Legislature and Advocacy Groups:</h2>
-            <a href="/SOAP/index.php/senators"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/senate_link.jpg"></a> 
+            <a href="/SOAP/index.php/Senators"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/senate_link.jpg"></a> 
 		<!--This is where the user can click the Senator link/image to view the Senators, the year they were elected, their political party, and the disrtic number they represent.-->  
             <a href="/SOAP/index.php/representatives"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/rep_link.jpg"></a><br>
 		<!--//This is where the user can click the Assembly link/image to view the Assembly, the year they were elected, their political party, and the disrtic number they represent.-->
