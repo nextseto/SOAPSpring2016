@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php $this->Html->script('jquery'); ?>
-        <script type="text/javascript" src="/cabect/SOAP/app/webroot/js/userQuery.js"></script>
+        <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
     </head>
     <body>
         <div class="span2">
@@ -19,25 +19,12 @@
 
             </style>
             <h2>Explore the NJ State Legislature and Advocacy Groups:</h2>
-	
-	<!--This is where the user can click the Senator link/image to view the Senators, the year they were elected, their political party, and the disrtic number they represent.-->  
-<?php echo $this->Html->image("senate_link.jpg", array(
-    'class'=>'pol_link',  "alt" => "Image Not available",
-    'url' => array('controller' => 'Senators')
-)); ?>     
- 
-
+            <a href="/SOAP/index.php/Senators"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/senate_link.jpg"></a> 
+		<!--This is where the user can click the Senator link/image to view the Senators, the year they were elected, their political party, and the disrtic number they represent.-->  
+            <a href="/SOAP/index.php/representatives"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/rep_link.jpg"></a><br>
 		<!--//This is where the user can click the Assembly link/image to view the Assembly, the year they were elected, their political party, and the disrtic number they represent.-->
-<?php echo $this->Html->image("rep_link.jpg", array(
-    'class'=>'pol_link',  "alt" => "Image Not available",
-    'url' => array('controller' => 'Representatives')
-)); ?>	   
-
+	    <a href="/SOAP/index.php/advocacygroups"><img class="pol_link" src="<?php echo $this->webroot; ?>/img/lob_link.jpg"></a>
 		<!--This is where the user can click the Advocacy Groups link/image to view the Advocacy Groups.-->
-<?php echo $this->Html->image("lob_link.jpg", array(
-    'class'=>'pol_link',  "alt" => "Image Not available",
-    'url' => array('controller' => 'Advocacygroups')
-)); ?>     
 
         </div>
     </body>
