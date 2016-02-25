@@ -14,23 +14,15 @@
 </div>    </div>  
         <div class="span9">
 <!--This is resposible for the header at the top of the page -->     
-<div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
+            <div class="span10">
+                    <div style ="text-align:center">
 <!--This is the big header  -->
                         <h1>Welcome to SOAP's Senators Page</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
 <!-- This is the sub text that describs the page function -->
-                        <p contenteditable="true" class="text-center">
+                        <h3 class="text-center">
 You can search any New Jersey Senators name to find that Senator. Each Senator has a picture, their name, the year they were elected, their political affiliation, and district number. 
-</p><br>
+</h3><br>
                     </div>
-                </div>
-            </div>
         </div> 
       <!--This includes the search bar if the user is looking for a particular Senator. It also has an "options" choice if the user would like to make a more advanced search.-->
             <div style="text-align:center;"><input style="width:70%; padding-left:18px; background: white no-repeat scroll left center url('<?php echo $this->webroot; ?>img/icon_search.png');" id="mainSearchBar" type="text" placeholder="Search by senator's name or click 'options' for more advanced searching."><a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin-left:-60px; margin-top:-7px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a></div>

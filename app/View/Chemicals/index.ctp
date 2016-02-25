@@ -5,28 +5,18 @@
         <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
     </head>
     <body>
+	<div class="span9"/>
         <div class="span2">
             <?php echo $this->element('sidebar'); ?>
         </div>
-
-          <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
+<div class = "span10 ">
+<div style ="text-align:center;margin-left:20%;"> 
                         <h1>Welcome to SOAP's Chemical Page</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p contenteditable="true" class="text-center">
-You can search any chemical name to find the chemical. The chemical will list if it's carcinogenic, whether the clean air act bans it, whether its a metal, and whether it's a PBT which are chemicals that are toxic and pose a risk to humans. Clicking the chemical will bring up all its information and facilities that might contain it. 
-</p><br>
-                    </div>
-                </div>
-            </div>
+<h3>You can search any chemical name to find the chemical. The chemical will list if it's carcinogenic, whether the clean air act bans it, whether its a metal, and whether it's a PBT which are chemicals that are toxic and pose a risk to humans. Clicking the chemical will bring up all its information and facilities that might contain it. 
+</h3><br>
         </div>
 <!-- Search options, available after Options in the search bar is selected -->
-        <div class="span10" style="margin-left:20%;">
+        <div class="span10" style= "margin-left:20%" >
             <div style="text-align:center;"><input style="width:70%; padding-left:18px; background: white no-repeat scroll left center url('<?php echo $this->webroot; ?>img/icon_search.png');" id="mainSearchBar" type="text" placeholder="Search by chemical name or click 'options' for more advanced searching."><a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin-left:-60px; margin-top:-7px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a></div>
             <div id="options" style="display:none; color:white; margin-bottom:20px;">
                 <label class="filterLabel">Filters:</label><br>
@@ -82,6 +72,7 @@ You can search any chemical name to find the chemical. The chemical will list if
         </div>
         <?php $this->Js->writeBuffer(); ?>
     </body>
+</div>
 </html>
 
 <!-- Function to call to enable tooltip feature -->
