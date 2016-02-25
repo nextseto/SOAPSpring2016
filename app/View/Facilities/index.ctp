@@ -19,7 +19,7 @@
                     <div class="col-md-12">
                         <p contenteditable="true" class="text-center">
 
-You can search any facility name to find the facility. The facility will list the its address, the county it's in, its parent company, its danger level, and if it's a brownfeild. Clicking on any facility will pull up further details on its location, the chemicals found on that site and their amounts, and will show the Google maps view of its location.
+You can search any facility name to find the facility. The facility will list the its address, the county it's in, its parent company, its danger level, and if it's a brownfield. Clicking on any facility will pull up further details on its location, the chemicals found on that site and their amounts, and will show the Google maps view of its location.
 </p><br>
                     </div>
                 </div>
