@@ -4,7 +4,7 @@
     <?php echo $this->element('sidebar'); ?>
 </div>
 <div class="span9">
-    <a href="http://tardis.tcnj.edu/cabect/SOAP/index.php/posts">Back to posts</a>
+<?php echo $this->Html->link('Back to posts', array('controller' => 'posts'));    
     <br>
     <br>
     <h1>Add Post</h1>

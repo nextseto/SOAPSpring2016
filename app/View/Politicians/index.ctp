@@ -18,8 +18,11 @@
                 }
             </style>
             <h2>Explore the NJ State Legislature and Lobbyists:</h2>
+			<!--This is where the user can click the Senator link/image to view the Senators, the year they were elected, their political party, and the disrtic number they represent.-->  
 	        <?php echo $this->Html->image("senate_link.jpg", array( 'class'=>'pol_link',  "alt" =>  "Image Not available", 'url' => array('controller' => 'Senators'))); ?>
+		<!--//This is where the user can click the Assembly link/image to view the Assembly, the year they were elected, their political party, and the disrtic number they represent.-->
 		<?php echo $this->Html->image("rep_link.jpg", array( 'class'=>'pol_link',  "alt" =>  "Image Not available", 'url' => array('controller' => 'Representatives'))); ?>
+		<!--This is where the user can click the Advocacy Groups link/image to view the Advocacy Groups.-->
 		<?php echo $this->Html->image("lob_link.jpg", array( 'class'=>'pol_link',  "alt" =>  "Image Not available", 'url' => array('controller' => 'Advocacygroups'))); ?>
 
 </div>
