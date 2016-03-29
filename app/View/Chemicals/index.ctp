@@ -9,6 +9,7 @@
         <div class="span2">
             <?php echo $this->element('sidebar'); ?>
         </div>
+        <!-- The Content View of the page. Contains the sidebar, table and text field. -->
 <div class = "span10 ">
 <div style ="text-align:center;margin-left:20%;"> 
                         <h1>Welcome to SOAP's Chemical Page</h1>
@@ -17,6 +18,7 @@
         </div>
 <!-- Search options, available after Options in the search bar is selected -->
         <div class="span10" style= "margin-left:20%" >
+            <!-- This controls the searchbar that finds chemicals by name -->
             <div style="text-align:center;"><input style="width:70%; padding-left:18px; background: white no-repeat scroll left center url('<?php echo $this->webroot; ?>img/icon_search.png');" id="mainSearchBar" type="text" placeholder="Search by chemical name or click 'options' for more advanced searching."><a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin-left:-60px; margin-top:-7px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a></div>
             <div id="options" style="display:none; color:white; margin-bottom:20px;">
                 <label class="filterLabel">Filters:</label><br>
@@ -27,12 +29,13 @@
                 <label class="filterLabel">PBT</label><input class="filter" type="input"><br>
 	    </div>
            
-	    <!--Table formatting. Zebra striped table, with 5 categories of information-->
+	    <!--Table and its formatting. Zebra striped table, with 5 categories of information-->
 	    <!--Andrew Preuss, shorten the names of chemicals when being viewed on a small screen(mobile device)-->
             <table class="table table-striped" style="border-top: 0px;">
                 <thead>
                     <tr>
-			<!-- Tooltip hover information for the Table headers - Joie Murphy-->
+			<!-- Tooltip hover information for the Table headers - Joie Murphy
+                and contains the titles for each column. -->
                         <th class="span3"style="width:auto"><a href="#" rel="tooltip" id="chemical_name" class="orderButton" style="color: #F5F3DC" title="Chemicals commonly associated with hazardous waste.">Chemical Name</a></th>
                         <th class="span3" style="width:auto;"><a href="#" rel="tooltip" id="carcinogenic" class="orderButton" style="color: #F5F3DC" title="Any type of substance, pollutant, or contaminant having the potential to cause cancer.">Carcinogenic</a></th>
                         <th class="span3" style="width:auto;"><a href="#" rel="tooltip" id="clean_air_act" class="orderButton" style="color: #F5F3DC" title="The Clean Air Act (CAA) is the federal law that regulates air emissions from stationary and mobile sources.">Clean Air Act</a></th>
@@ -47,6 +50,7 @@
                 <input id="currentCount" type="hidden">
 		<input id="currentOrder" type="hidden">
                 <input id="currentLimit" type="hidden" value=25>
+            <!-- Important!! This contains the 'cell' elements that contain the: chemical name and properties of this chemical. This is dynamically created. (NOT HARD CODED!!!) -->
                 <tbody id="dataTable"> 
                 </tbody>
             </table>

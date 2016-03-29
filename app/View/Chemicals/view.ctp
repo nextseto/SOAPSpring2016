@@ -34,6 +34,7 @@
     <div class="details">
         <h1>Chemical Details:</h1>
         <hr />
+        <!-- Data for each element in the cell for the Chemical TableView -->
         <h3>Carcinogenic: <?php echo $chem_info[0][0]['carcinogenic']; ?></h3>
         <h3>Clean Air Act: <?php echo $chem_info[0][0]['clean_air_act']; ?></h3>
         <h3>Metal: <?php echo $chem_info[0][0]['metal']; ?></h3>

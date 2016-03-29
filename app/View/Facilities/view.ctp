@@ -29,6 +29,7 @@
     </style>
     <h1 style="text-align:center;"><?php echo $facility_info[0][0]['facility_name']; ?></h1>
     <div class="details">
+        <!-- Properties of Facility Details for each cell in the page's TableView -->
         <h1>Facility Details:</h1>
         <hr />
         <h3>Parent Company: <?php echo $facility_info[0][0]['owner_name']; ?></h3>
@@ -36,6 +37,7 @@
         <h3>Brownfield: <?php echo $facility_info[0][0]['is_brownfield']; ?></h3>
     </div>
     <div class="details">
+        <!-- Properties of Location Details for each cell in the page's TableView -->
         <h1>Location details:</h1>
         <hr />
         <h3>Street Address: <?php echo $facility_info[0][0]['location_id']; ?></h3>
