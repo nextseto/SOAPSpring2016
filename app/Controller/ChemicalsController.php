@@ -7,7 +7,7 @@ class ChemicalsController extends AppController {
     
     public function index() {
     }
-    
+    //SQL queries that draw up the data of the chemicals and facilities displayed in their respective tables 
     public function view($chem_id) {
         $chem_sql = 'SELECT chemical_name, carcinogenic, clean_air_act, metal, pbt
                     FROM "newsoap"."chemicals"
@@ -22,6 +22,7 @@ class ChemicalsController extends AppController {
         $this->set('facility_info', $facility_info);
     }
     
+    // function loads the contents of the table display and populates the rows
     public function loadTable(){
         $this->autoRender = false;
         $data = $this->request->data;
