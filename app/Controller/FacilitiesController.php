@@ -7,7 +7,7 @@ class FacilitiesController extends AppController {
 
 	public function index() {
 	}
-    
+    // displays all of the facility information for each facility and the chemicals that are in it
     public function view($facility_id) {
         $facility_sql = 'SELECT facility_name, owner_name, dangerous_state, is_brownfield, location_id, county, municipality, latitude, longitude, x_coor, y_coor
                         FROM "newsoap"."facilities"
@@ -25,6 +25,7 @@ class FacilitiesController extends AppController {
         $this->set('chem_info', $chem_info);
     }
     
+    // this function loads and populates the table for each of the facilities
     public function loadTable(){
         $this->autoRender = false;
         $data = $this->request->data;
