@@ -33,7 +33,7 @@
     <!DOCTYPE html>
 
 <html>
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="google" value="notranslate">
@@ -148,13 +148,13 @@
         }
     </style>
 </head>
-
+    
 <body>
 
     <button data-js="openPopup">Open Pop-up</button>
 
     <div class="popup">
-      
+        <!--
         <button name="closePopup" style="float:right">Close</button>
         <button style="float:right">Chemicals</button>
         <button style="float:right">Location</button>
@@ -197,10 +197,114 @@
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
         </div>
+        -->
+
+
+        <!--
+        <button name="closePopup" style="float:right">Close</button>
+        <button style="float:right">Chemicals</button>
+        <button style="float:right">Location</button>
+        <h2>3M CO</h2>
+        <hr>
+        <br>
+        <div style="float:left">
+            <h4>TOLUENE</h4>
+            <p>Total Amount: 3670 Pounds</p>
+            <p>Fugitive Air Amount: 3500 Pounds</p>
+            <p>Water Amount: 0 Pounds</p>
+            <p>Stack Air Amount: 170 Pounds</p>
+            <br>
+            <h4>XYLENE (MIXED ISOMERS)</h4>
+            <p>Total Amount: 1006 Pounds</p>
+            <p>Fugitive Air Amount: 920 Pounds</p>
+            <p>Water Amount: 0 Pounds</p>
+            <p>Stack Air Amount: 86 Pounds</p>
+        </div>
+
+        <div style="float:right">
+
+            <img src="https://dl.dropboxusercontent.com/u/38065186/d.png" alt="Mountain View" style="width:300px;height:200px;">
+
+        </div>
+        -->
+
+    
+        
+        <div style="float:left">
+            <button name="closePopup" style="float:right">Close</button>
+            <button style="float:right">Location</button>
+            <button style="float:right">Statistics</button>
+            <h2>1,1,1-TRICHLOROETHANE</h2>
+            <hr>
+            <br>
+            <p>Carcinogenic: No</p>
+            <p>Clean Air Act: Yes</p>
+            <p>Metal: No</p>
+            <p>PBT: NON_PBT</p>
+            <p>Effects:</p>
+        </div>
         
 
+        <!--
+        <button name="closePopup" style="float:right">Close</button>
+        <button style="float:right">Chemicals</button>
+        <button style="float:right">Location</button>
+        <h2>1,1,1-TRICHLOROETHANE</h2>
+        <hr>
+        <br>
+        <div style="float:left">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Facilities that contain this chemical:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ACME GEAR CO INC</td>
+                    </tr>
+                    <tr>
+                        <td>ACRISON INC</td>
+                    </tr>
+                    <tr>
+                        <td>AFFILIATED MANUFACTURERS INC</td>
+                    </tr>
+                    <tr>
+                        <td>ALLIED-SIGNAL AEROSPACE</td>
+                    </tr>
+                    <tr>
+                        <td>AMES RUBBER CORP. PLANT #4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-       
+        <div style="float:right">
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var myLatLng = {
+                        lat: 40.886546,
+                        lng: -73.987269
+                    };
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 14,
+                        center: myLatLng,
+                        disableDefaultUI: true
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: 'ACME GEAR CO INC'
+                    });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+        </div>
+        -->
+        
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -222,6 +326,7 @@
 </body>
 
 </html>
+
     <!--<h1 style="text-align:center;"><?php echo $chem_info[0][0]['chemical_name']; ?></h1>
     <div class="details">
         <h1>Chemical Details:</h1>
