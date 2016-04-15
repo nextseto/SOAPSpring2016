@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <title>Facilities Popup (location)</title>
+    <style>
+        .popup {
+            background: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            display: none;
+            z-index: 5000;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+        
+        .popup > div {
+            border-radius: 4px;
+            position: fixed;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 12px #666666;
+            padding: 1em 2em 2em;
+            width: 80%;
+            max-width: 600px;
+            z-index: 5001;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+        
+        #map {
+            width: 300px;
+            height: 200px;
+            background-color: #CCC;
+        }
+        
+        body {
+            color: #333;
+            padding: 1.5em;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th {
+            background-color: #eee;
+            font-weight: bold;
+        }
+        
+        th,
+        td {
+            border: 0.125em solid #333;
+            line-height: 1.5;
+            padding: 0.75em;
+            text-align: left;
+        }
+        /* Stack rows vertically on small screens */
+        
+        @media (max-width: 30em) {
+            /* Hide column labels */
+            thead tr {
+                position: absolute;
+                top: -9999em;
+                left: -9999em;
+            }
+            tr {
+                border: 0.125em solid #333;
+                border-bottom: 0;
+            }
+            /* Leave a space between table rows */
+            tr + tr {
+                margin-top: 1.5em;
+            }
+            /* Get table cells to act like rows */
+            tr,
+            td {
+                display: block;
+            }
+            td {
+                border: none;
+                border-bottom: 0.125em solid #333;
+                /* Leave a space for data labels */
+                padding-left: 50%;
+            }
+            /* Add data labels */
+            td:before {
+                content: attr(data-label);
+                display: inline-block;
+                font-weight: bold;
+                line-height: 1.5;
+                margin-left: -100%;
+                width: 100%;
+            }
+        }
+        /* Stack labels vertically on smaller screens */
+        
+        @media (max-width: 20em) {
+            td {
+                padding-left: 0.75em;
+            }
+            td:before {
+                display: block;
+                margin-bottom: 0.75em;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button data-js="openPopup">Open Pop-up</button>
+
+    <div class="popup">
+    
+        <button name="closePopup" style="float:right">Close</button>
+        <button style="float:right">Chemicals</button>
+        <button style="float:right">Location</button>
+        <h2>3M CO</h2>
+        <hr>
+        <br>
+        <div style="float:left">
+            <p>Parent Company: 3M CO INC</p>
+            <p>Danger Level: 1 (out of 5)</p>
+            <p>Brownfield: N/A</p>
+            <br>
+            <p>Street Address: 225 WILLOWBROOK RD</p>
+            <p>County: MONMOUTH</p>
+            <p>Municipality: N/A</p>
+            <p>Latitude: 01°44'41", Longitude: 11°51'18"</p>
+            <p>X Coordinate: 40.2408, Y Coordinate: -74.269</p>
+        </div>
+
+        <div style="float:right">
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var myLatLng = {
+                        lat: 40.2408,
+                        lng: -74.269
+                    };
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 14,
+                        center: myLatLng,
+                        disableDefaultUI: true
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: '3M CO'
+                    });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+        </div>
+
+
+        <!--
+        <button name="closePopup" style="float:right">Close</button>
+        <button style="float:right">Chemicals</button>
+        <button style="float:right">Location</button>
+        <h2>3M CO</h2>
+        <hr>
+        <br>
+        <div style="float:left">
+            <h4>TOLUENE</h4>
+            <p>Total Amount: 3670 Pounds</p>
+            <p>Fugitive Air Amount: 3500 Pounds</p>
+            <p>Water Amount: 0 Pounds</p>
+            <p>Stack Air Amount: 170 Pounds</p>
+            <br>
+            <h4>XYLENE (MIXED ISOMERS)</h4>
+            <p>Total Amount: 1006 Pounds</p>
+            <p>Fugitive Air Amount: 920 Pounds</p>
+            <p>Water Amount: 0 Pounds</p>
+            <p>Stack Air Amount: 86 Pounds</p>
+        </div>
+
+        <div style="float:right">
+
+            <img src="https://dl.dropboxusercontent.com/u/38065186/d.png" alt="Mountain View" style="width:300px;height:200px;">
+
+        </div>
+        -->
+
+        <!--
+        <button name="closePopup" style="float:right">Close</button>
+        <button style="float:right">Location</button>
+        <button style="float:right">Statistics</button>
+        <h2>1,1,1-TRICHLOROETHANE</h2>
+        <hr>
+        <br>
+        <div style="float:left">
+            <p>Carcinogenic: No</p>
+            <p>Clean Air Act: Yes</p>
+            <p>Metal: No</p>
+            <p>PBT: NON_PBT</p>
+            <p>Effects:</p>
+        </div>
+        -->
+
+        <!--
+        <button name="closePopup" style="float:right">Close</button>
+        <button style="float:right">Chemicals</button>
+        <button style="float:right">Location</button>
+        <h2>1,1,1-TRICHLOROETHANE</h2>
+        <hr>
+        <br>
+        <div style="float:left">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Facilities that contain this chemical:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ACME GEAR CO INC</td>
+                    </tr>
+                    <tr>
+                        <td>ACRISON INC</td>
+                    </tr>
+                    <tr>
+                        <td>AFFILIATED MANUFACTURERS INC</td>
+                    </tr>
+                    <tr>
+                        <td>ALLIED-SIGNAL AEROSPACE</td>
+                    </tr>
+                    <tr>
+                        <td>AMES RUBBER CORP. PLANT #4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="float:right">
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var myLatLng = {
+                        lat: 40.886546,
+                        lng: -73.987269
+                    };
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 14,
+                        center: myLatLng,
+                        disableDefaultUI: true
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: 'ACME GEAR CO INC'
+                    });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+        </div>
+        -->
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <script>
+        function popupOpenClose(e) {
+            0 == $(".wrapper").length && $(e).wrapInner("<div class='wrapper'></div>"), $(e).show(), $(e).click(function (n) {
+                n.target == this && $(e).is(":visible") && $(e).hide()
+            }), $(e).find("button[name=closePopup]").on("click", function () {
+                $(".formElementError").is(":visible") && $(".formElementError").remove(), $(e).hide()
+            })
+        }
+        $(document).ready(function () {
+            $("[data-js=openPopup]").on("click", function () {
+                popupOpenClose($(".popup"))
+            })
+        });
+    </script>
+</body>
+
+</html>
