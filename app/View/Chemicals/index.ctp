@@ -12,11 +12,10 @@
         <?php echo $this->element('sidebar'); ?>
     </div>
     <!-- The Content View of the page. Contains the sidebar, table and text field. -->
-    <div class="span10 ">
+    <div class="span10">
         <div style="text-align:center;margin-left:20%;">
             <h1>Welcome to SOAP's Chemical Page</h1>
-            <h3>You can search any chemical name to find the chemical. The chemical will list if it's carcinogenic, whether the clean air act bans it, whether its a metal, and whether it's a PBT which are chemicals that are toxic and pose a risk to humans. Clicking the chemical will bring up all its information and facilities that might contain it. 
-</h3>
+            <h3>You can search any chemical name to find the chemical. The chemical will list if it's carcinogenic, whether the clean air act bans it, whether its a metal, and whether it's a PBT which are chemicals that are toxic and pose a risk to humans. Clicking the chemical will bring up all its information and facilities that might contain it. </h3>
             <br>
         </div>
         <!-- Search options, available after Options in the search bar is selected -->
@@ -58,8 +57,6 @@
 
                         <th class="span3" style="width:auto;"><a href="#" rel="tooltip" id="pbt" class="orderButton" style="color: #F5F3DC" title="PBT pollutants are chemicals that are toxic and pose risks to human health and ecosystems.">PBT</a></th>
                     </tr>
-
-                    </tr>
                 </thead>
                 <input id="currentOffset" type="hidden">
                 <input id="currentCount" type="hidden">
@@ -92,8 +89,8 @@
             <!-- row-fluid -->
         </div>
         <?php $this->Js->writeBuffer(); ?>
+    </div>
 </body>
-</div>
 
 </html>
 

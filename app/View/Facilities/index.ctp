@@ -14,9 +14,7 @@
     <div class="span10 ">
         <div style="text-align:center;margin-left:20%;">
             <h1>Welcome to SOAP's Facilities Page</h1>
-            <h3>
-You can search any facility name to find the facility. The facility will list the its address, the county it's in, its parent company, its danger level, and if it's a brownfield. Clicking on any facility will pull up further details on its location, the chemicals found on that site and their amounts, and will show the Google maps view of its location.
-</h3>
+            <h3>You can search any facility name to find the facility. The facility will list the its address, the county it's in, its parent company, its danger level, and if it's a brownfield. Clicking on any facility will pull up further details on its location, the chemicals found on that site and their amounts, and will show the Google maps view of its location.</h3>
             <br>
         </div>
         <!--- This div controls the entire table content of the facilities page. -->
@@ -87,7 +85,8 @@ You can search any facility name to find the facility. The facility will list th
             </div>
             <!-- row-fluid -->
         </div>
-        <?php $this->Js->writeBuffer(); ?>
+    </div>
+    <?php $this->Js->writeBuffer(); ?>
 </body>
 
 </html>
