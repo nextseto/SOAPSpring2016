@@ -1,30 +1,36 @@
 <!-- File: /app/View/Facilities/view.ctp -->
 <div style="position:fixed" class=span2>
-	<?php style:"position:fixed"; echo $this->element('sidebar'); ?>
+    <?php style:"position:fixed"; echo $this->element('sidebar'); ?>
 </div>
 <div class="span9" style="margin-left:20%">
     <style>
-        .details{
-            margin-bottom:25px;
+        .details {
+            margin-bottom: 25px;
         }
-        hr{
-            border-color:#013435;
-            margin:5px;
+        
+        hr {
+            border-color: #013435;
+            margin: 5px;
         }
-        h1{
-            font-size:25px;
+        
+        h1 {
+            font-size: 25px;
         }
-        h2{
-            font-size:20px;
+        
+        h2 {
+            font-size: 20px;
         }
-        h3{
-            font-size:15px;
+        
+        h3 {
+            font-size: 15px;
         }
-        h4{
-            font-size:12px;
+        
+        h4 {
+            font-size: 12px;
         }
-        a.pageLink{
-            color:#037162;
+        
+        a.pageLink {
+            color: #037162;
         }
     </style>
     <h1 style="text-align:center;"><?php echo $facility_info[0][0]['facility_name']; ?></h1>
@@ -69,11 +75,11 @@
             <h4>Fugitive Air Amount: <?php echo $chem[0]['fugair_amount']; ?></h4>
             <h4>Water Amount: <?php echo $chem[0]['water_amount']; ?></h4>
             <h4>Stack Air Amount: <?php echo $chem[0]['stackair_amount']; ?></h4>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
     </div>
-	<br>
-	<br>
-	<?php
+    <br>
+    <br>
+    <?php
         if($facility_info[0][0]['x_coor'] != null && $facility_info[0][0]['y_coor'] != null){
             $latitude = floatval($facility_info[0][0]['x_coor']);
             $longitude = -1*floatval($facility_info[0][0]['y_coor']);
@@ -94,26 +100,26 @@
             echo $this->GoogleMapV3->addMarker(array('infoWindow'=>false, 'latitude'=>$latitude, 'longitude'=>$longitude));
         }
     ?>
-    <br>
-    <br>
-    <!--<?php echo $this->Facebook->share(); ?>
+        <br>
+        <br>
+        <!--<?php echo $this->Facebook->share(); ?>
     <br>
     <br>
     <a href="https://twitter.com/share" class="twitter-share-button" data-text="TCNJ SOAP" data-via="TCNJSoap" data-size="large">Tweet</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
-	<!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style ">
-<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-<a class="addthis_button_tweet"></a>
-<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-<a class="addthis_counter addthis_pill_style"></a>
-</div>
-<!-- <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script> -->
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fe8fc260b784686"></script>
-<!-- AddThis Button END -->
-	<br>
-	<h4>Comments: </h4>
-<!--	<div id="disqus_thread"></div>
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            <a class="addthis_counter addthis_pill_style"></a>
+        </div>
+        <!-- <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script> -->
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fe8fc260b784686"></script>
+        <!-- AddThis Button END -->
+        <br>
+        <h4>Comments: </h4>
+        <!--	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 		var disqus_shortname = 'tcnjsoap'; // required: replace example with your forum shortname
@@ -128,16 +134,18 @@
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 -->
-<style>
-    .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget iframe[style]{
-        width:600px !important;
-    }
-</style>
-<div class="facebook">
-<?php echo $this->Facebook->comments(
+        <style>
+            .fb_iframe_widget,
+            .fb_iframe_widget span,
+            .fb_iframe_widget iframe[style] {
+                width: 600px !important;
+            }
+        </style>
+        <div class="facebook">
+            <?php echo $this->Facebook->comments(
 		$options = array(
 			'mobile' => 'false'
 			)
 		);  ?>
-</div>
+        </div>
 </div>
