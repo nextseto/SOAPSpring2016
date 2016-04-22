@@ -7,23 +7,25 @@
 </head>
 
 <body>
-    <!--- This div controls the sidebar of the facilities page. -->
+    <div class="span9" />
     <div class="span2">
         <?php echo $this->element('sidebar'); ?>
     </div>
-    <div class="span10 ">
+    <div class="span10">
         <div style="text-align:center;margin-left:20%;">
-            <h1>Welcome to SOAP's Facilities Page</h1>
-            <h3>You can search any facility name to find the facility. The facility will list the its address, the county it's in, its parent company, its danger level, and if it's a brownfield. Clicking on any facility will pull up further details on its location, the chemicals found on that site and their amounts, and will show the Google maps view of its location.</h3>
+            <br>
+            <h1 style="font-size: 40px;">Facilities</h1>
+            <h3>You can search any facility name to find the facility. The facility will list the its address, the county it's in, its parent company, its danger level, and if it's a brownfield. Clicking on any facility show details on its location, the chemicals found at that site and their amounts, and a Google maps view of its location.</h3>
             <br>
         </div>
-        <!--- This div controls the entire table content of the facilities page. -->
-        <div class="span10" style="margin-left:20%;">
-            <!--- This div controls the searchbar of the facilities page. (Beau)-->
-            <div style="text-align:center;">
-                <input style="width:70%; padding-left:18px; background: white no-repeat scroll left center url('<?php echo $this->webroot; ?>img/icon_search.png');" id="mainSearchBar" type="text" placeholder="Search by facility name or click 'options' for more advanced searching."><a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin-left:-60px; margin-top:-7px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a></div>
 
-            <!--- This div controls the options button on the searchbar of the facilities page. (Beau)-->
+        <div class="span10" style="margin-left:20%;">
+            <div class="input-group">
+                <div class="input-group-addon">Search</div>
+                <input type="text" class="form-control" id="mainSearchBar" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin: 8px 0 0 -65px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a>
+            </div>
+
             <div id="options" style="display:none; color:white; margin-bottom:20px;">
                 <label class="filterLabel">Filters:</label>
                 <br>
@@ -46,10 +48,10 @@
                 <input class="filter" type="input">
                 <br>
             </div>
+
             <table class="table table-striped" style="border-top: 0px;">
                 <thead>
                     <tr>
-                        <!-- Tooltip hover information for table headers - Joie Murphy-->
                         <th class="span3" style="width:auto;"><a href="#" rel="tooltip" id="facility_name" class="orderButton" style="color: #f5f3dc" title="The name of the factory, production site, or environmental waste cleaning facility that typically handles or handled dangerous chemicals.">Facility Name</a></th>
                         <th class="span3" style="width:auto;"><a href="#" rel="tooltip" id="location_id" class="orderButton" style="color: #f5f3dc" title="The current or former New Jersey address of a specific factory, production site, or environmental waste cleaning facility.">Address</a></th>
                         <th class="span3" style="width:auto;"><a href="#" rel="tooltip" id="county" class="orderButton" style="color: #f5f3dc" title="A political and administrative division of a state, providing certain local governmental services. New Jersey has 21 counties.">County</a></th>
