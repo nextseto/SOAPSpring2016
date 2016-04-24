@@ -1,4 +1,4 @@
-<!-- Created by CSC 315 Team 4 fall 2015
+<!-- Created by CSC 315 Team 4 fall 2015 
 This file generates the view for the chemTransparency page. 
 This file retreives information from the database on chemicals located in facilities/counties and 
 presents the queried results. These results will be used for the generation of pie charts visualization of chemical percentages
