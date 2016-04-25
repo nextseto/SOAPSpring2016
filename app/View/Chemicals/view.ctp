@@ -45,7 +45,7 @@
             width: 100%;
             left: 0;
             top: 0;
-`	      overflow-y: scroll;
+	        overflow-y: scroll;
         }
         
         .popup > div {
