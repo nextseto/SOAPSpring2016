@@ -45,6 +45,7 @@
             width: 100%;
             left: 0;
             top: 0;
+            overflow-y: scroll;
         }
         
         .popup > div {
@@ -63,6 +64,8 @@
             transform: translate(-50%, -50%);
             left: 50%;
             top: 50%;
+            overflow-y: scroll;
+            max-height: 70%;
         }
         
         #map {
