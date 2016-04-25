@@ -181,19 +181,19 @@
                     </h3>
                     <h3>
                         <?php 
-            if ($facility_info[0][0]['latitude'] == null || $facility_info[0][0]['longitude'] == null)
-                echo 'Latitude: N/A, Longitude: N/A';
-            else
-                echo 'Latitude: ' . $facility_info[0][0]['latitude'] . ', ' . 'Longitude: ' . $facility_info[0][0]['longitude']; 
-        ?>
+                    if ($facility_info[0][0]['latitude'] == null || $facility_info[0][0]['longitude'] == null)
+                        echo 'Latitude: N/A, Longitude: N/A';
+                    else
+                        echo 'Latitude: ' . $facility_info[0][0]['latitude'] . ', ' . 'Longitude: ' . $facility_info[0][0]['longitude']; 
+                    ?>
                     </h3>
                     <h3>
-                        <?php 
-            if ($facility_info[0][0]['x_coor'] == null || $facility_info[0][0]['y_coor'] == null)
-                echo 'X Coordinate: N/A, Y Coordinate: N/A';
-            else
-                echo 'X Coordinate: ' . floatval($facility_info[0][0]['x_coor']) . ', ' . 'Y Coordinate: ' . -1*floatval($facility_info[0][0]['y_coor']); 
-        ?>
+                    <?php 
+                    if ($facility_info[0][0]['x_coor'] == null || $facility_info[0][0]['y_coor'] == null)
+                        echo 'X Coordinate: N/A, Y Coordinate: N/A';
+                    else
+                        echo 'X Coordinate: ' . floatval($facility_info[0][0]['x_coor']) . ', ' . 'Y Coordinate: ' . -1*floatval($facility_info[0][0]['y_coor']); 
+                    ?>
                     </h3>
                 </div>
                 <div style="float:right; width: 49%;">
@@ -202,17 +202,18 @@
                         function initMap() {
                             var myLatLng = {
                                 lat: <?php echo floatval($facility_info[0][0]['latitude']) ?>,
-                                lng: <?php echo floatval($facility_info[0][0]['longitude']) ?>
+                                lng: <?php echo -1*floatval($facility_info[0][0]['longitude']) ?>
                             };
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 14,
+                            var map = new google.maps.Map(document.getElementById('map'), Options);
+                            var Options = {
+                                zoom: 10,
                                 center: myLatLng,
-                                disableDefaultUI: true
-                            });
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            }
                             var marker = new google.maps.Marker({
                                 position: myLatLng,
                                 map: map,
-                                title: ""
+                                title: "Facilitie Map"
                             });
                         }
                     </script>
