@@ -204,12 +204,12 @@
                                 lat: <?php echo floatval($facility_info[0][0]['latitude']) ?>,
                                 lng: <?php echo -1*floatval($facility_info[0][0]['longitude']) ?>
                             };
-                            var map = new google.maps.Map(document.getElementById('map'), Options);
                             var Options = {
                                 zoom: 10,
                                 center: myLatLng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             }
+                            var map = new google.maps.Map(document.getElementById('map'), Options);
                             var marker = new google.maps.Marker({
                                 position: myLatLng,
                                 map: map,
