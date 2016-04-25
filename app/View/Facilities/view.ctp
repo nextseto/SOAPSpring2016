@@ -151,7 +151,7 @@
     <button data-js="openPopup">Facility Popup</button>
 
     <div class="popup">
-        <div style="float:left; width: 100%;">
+        <div style="float:left; width: 85%;">
             <button name="closePopup" style="float:right">Close</button>
             <button style="float:right" onclick="switchDisplay(1)">Chemicals</button>
             <button style="float:right" onclick="switchDisplay(0)">Location</button>
