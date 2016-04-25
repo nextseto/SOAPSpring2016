@@ -69,8 +69,8 @@
         }
         
         #map {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: 250px;
             background-color: #CCC;
         }
         
@@ -151,7 +151,7 @@
     <button data-js="openPopup">Facility Popup</button>
 
     <div class="popup">
-        <div style="float:left">
+        <div style="float:left; width: 100%;">
             <button name="closePopup" style="float:right">Close</button>
             <button style="float:right" onclick="switchDisplay(1)">Chemicals</button>
             <button style="float:right" onclick="switchDisplay(0)">Location</button>
@@ -159,7 +159,7 @@
             <hr>
             <br>
             <div id="build-info">
-                <div style="float:left">
+                <div style="float:left; width: 49%;">
                     <h3>Parent Company:
                         <?php echo $facility_info[0][0]['owner_name']; ?>
                     </h3>
@@ -196,13 +196,13 @@
         ?>
                     </h3>
                 </div>
-                <div style="float:right">
+                <div style="float:right; width: 49%;">
                     <div id="map"></div>
                     <script>
                         function initMap() {
                             var myLatLng = {
-                                lat: <?php echo floatval($facility_info[0][0]['x_coor']) ?>,
-                                lng: <?php echo floatval($facility_info[0][0]['y_coor']) ?>
+                                lat: <?php echo floatval($facility_info[0][0]['latitude']) ?>,
+                                lng: <?php echo floatval($facility_info[0][0]['longitude']) ?>
                             };
                             var map = new google.maps.Map(document.getElementById('map'), {
                                 zoom: 14,
