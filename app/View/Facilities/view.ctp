@@ -201,8 +201,8 @@
                     <script>
                         function initMap() {
                             var myLatLng = {
-                                lat: <?php echo floatval($facility_info[0][0]['latitude']) ?>,
-                                lng: <?php echo -1*floatval($facility_info[0][0]['longitude']) ?>
+                                lat: <?php echo floatval($facility_info[0][0]['x_coor']) ?>,
+                                lng: <?php echo -1*floatval($facility_info[0][0]['y_coor']) ?>
                             };
                             var Options = {
                                 zoom: 10,
