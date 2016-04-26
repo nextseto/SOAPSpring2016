@@ -9,7 +9,7 @@
     "MUN": "<?php echo ($facility_info[0][0]['municipality'] == null ? 'N/A' : addslashes($facility_info[0][0]['municipality'])); ?>",
     "LAT": "<?php echo ($facility_info[0][0]['latitude'] == null ? 'Latitude: N/A' : 'Latitude: ' . $facility_info[0][0]['latitude']); ?>,
     "LNG": "<?php echo ($facility_info[0][0]['longitude'] == null ? 'Longitude: N/A' : 'Longitude: ' . $facility_info[0][0]['longitude']); ?>,
-    "XY": "<?php echo ($facility_info[0][0]['x_coor'] == null || $facility_info[0][0]['y_coor'] == null ? 'X Coordinate: N/A, Y Coordinate: N/A' : 'X Coordinate: ' . floatval($facility_info[0][0]['x_coor']) . ', ' . 'Y Coordinate: ' . -1*floatval($facility_info[0][0]['y_coor']) . '"'); ?>,
+    "XY": "<?php echo ($facility_info[0][0]['x_coor'] == null || $facility_info[0][0]['y_coor'] == null ? 'X Coordinate: N/A, Y Coordinate: N/A' : 'X Coordinate: ' . floatval($facility_info[0][0]['x_coor']) . ', ' . 'Y Coordinate: ' . -1*floatval($facility_info[0][0]['y_coor'])); ?>",
     "CHEMICAL": [
         <?php for ($x = 0; $x < count($chem_info); $x++) 
         {
