@@ -229,24 +229,24 @@
         <?php $this->Js->writeBuffer(); ?>
     </div>
     <div class="popup">
-        <div style="float:left; height: auto;">
+        <div style="float:left; height: 50%;">
             <button name="closePopup" style="float:right">Close</button>
             <button style="float:right" onclick="switchDisplay(1)">Location</button>
             <button style="float:right" onclick="switchDisplay(0)">Statistics</button>
-            <h2><?php echo $chem_info[0][0]['chemical_name']; ?></h2>
+            <h2 id="namename"><?php echo $chem_info[0][0]['chemical_name']; ?></h2>
             <hr>
             <br>
-            <div id="chem-info" style="height: 75%;">
-                <h3>Carcinogenic:
+            <div id="chem-info">
+                <h3 id="car">Carcinogenic:
                     <?php echo $chem_info[0][0]['carcinogenic']; ?>
                 </h3>
-                <h3>Clean Air Act:
+                <h3 id="cleanAir">Clean Air Act:
                     <?php echo $chem_info[0][0]['clean_air_act']; ?>
                 </h3>
-                <h3>Metal:
+                <h3 id="metall">Metal:
                     <?php echo $chem_info[0][0]['metal']; ?>
                 </h3>
-                <h3>PBT:
+                <h3 id="PBBT">PBT:
                     <?php echo $chem_info[0][0]['pbt']; ?>
                 </h3>
             </div>
@@ -342,14 +342,35 @@
 <!-- Checks to see if link is clicked through checking for a hash - Brittany Reedman -->
 <script>
     $(window).on('hashchange', function() {
-        chem_info = location.hash;
+        chem_hash = location.hash;
         popupOpenClose($(".popup"))
         switchDisplay(0)
+        
+
+    $.ajax({
+        url: "/cabect/SOAP/index.php/chemicals/view/" + chem_hash.split("#")[1],
+        type: 'POST',
+        success: function(data) 
+        {
+            data = data.split("///:///");
+            document.getElementById('namename').innerHTML = data[0];
+            document.getElementById('car').innerHTML = "Carcinogenic: " + data[1];
+            document.getElementById('cleanAir').innerHTML = "Clean Air Act: " + data[2];
+            document.getElementById('metall').innerHTML = "Metal: " + data[3];
+            document.getElementById('PBBT').innerHTML = "PBT: " + data[4];
+            
+            console.log(data[0])
+            
+        }    ,error: function(XMLHttpRequest, textStatus, errorThrown) { 
+        alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+    } 
+        
     });
-    window.onload = function() {
-        if(window.location.hash != ''){
-            popupOpenClose($(".popup"))
-            switchDisplay(0)
-        }
-    };
+        
+
+
+        
+        
+        
+    });
 </script>
