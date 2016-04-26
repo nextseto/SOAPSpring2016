@@ -5,148 +5,148 @@
     <?php $this->Html->script('jquery'); ?>
         <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
         <style>
-        .details {
-            margin-bottom: 25px;
-        }
-        
-        hr {
-            border-color: #013435;
-            margin: 5px;
-        }
-        
-        h1 {
-            font-size: 25px;
-        }
-        
-        h2 {
-            font-size: 20px;
-        }
-        
-        h3 {
-            font-size: 15px;
-        }
-        
-        h4 {
-            font-size: 12px;
-        }
-        
-        a.pageLink {
-            color: #037162;
-        }
-        
-        .popup {
-            background: rgba(255, 255, 255, 0.8);
-            position: fixed;
-            display: none;
-            z-index: 5000;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            top: 0;
-        }
-        
-        .popup > div {
-            border-radius: 4px;
-            position: fixed;
-            background: #FFFFFF;
-            box-shadow: 0px 0px 12px #666666;
-            padding: 1em 2em 2em;
-            width: 80%;
-            max-width: 768px;
-            z-index: 5001;
-            -webkit-transform: translate(-50%, -50%);
-            -moz-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -o-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 50%;
-            max-height: 70%;
-        }
-        
-        #map {
-            width: 300px;
-            height: 200px;
-            background-color: #CCC;
-        }
-        
-        body {
-            color: #333;
-            padding: 1.5em;
-        }
-        
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        
-        th {
-            background-color: #eee;
-            font-weight: bold;
-        }
-        
-        th,
-        td {
-            border: 0.125em solid #333;
-            line-height: 1.5;
-            padding: 0.75em;
-            text-align: left;
-        }
-        /* Stack rows vertically on small screens */
-        
-        @media (max-width: 30em) {
-            /* Hide column labels */
-            thead tr {
-                position: absolute;
-                top: -9999em;
-                left: -9999em;
+            .details {
+                margin-bottom: 25px;
             }
-            tr {
-                border: 0.125em solid #333;
-                border-bottom: 0;
+            
+            hr {
+                border-color: #013435;
+                margin: 5px;
             }
-            /* Leave a space between table rows */
-            tr + tr {
-                margin-top: 1.5em;
+            
+            h1 {
+                font-size: 25px;
             }
-            /* Get table cells to act like rows */
-            tr,
-            td {
-                display: block;
+            
+            h2 {
+                font-size: 20px;
             }
-            td {
-                border: none;
-                border-bottom: 0.125em solid #333;
-                /* Leave a space for data labels */
-                padding-left: 50%;
+            
+            h3 {
+                font-size: 15px;
             }
-            /* Add data labels */
-            td:before {
-                content: attr(data-label);
-                display: inline-block;
-                font-weight: bold;
-                line-height: 1.5;
-                margin-left: -100%;
+            
+            h4 {
+                font-size: 12px;
+            }
+            
+            a.pageLink {
+                color: #037162;
+            }
+            
+            .popup {
+                background: rgba(255, 255, 255, 0.8);
+                position: fixed;
+                display: none;
+                z-index: 5000;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+            }
+            
+            .popup > div {
+                border-radius: 4px;
+                position: fixed;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 12px #666666;
+                padding: 1em 2em 2em;
+                width: 80%;
+                max-width: 768px;
+                z-index: 5001;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                max-height: 70%;
+            }
+            
+            #map {
+                width: 300px;
+                height: 200px;
+                background-color: #CCC;
+            }
+            
+            body {
+                color: #333;
+                padding: 1.5em;
+            }
+            
+            table {
+                border-collapse: collapse;
                 width: 100%;
             }
-        }
-        /* Stack labels vertically on smaller screens */
-        
-        @media (max-width: 20em) {
+            
+            th {
+                background-color: #eee;
+                font-weight: bold;
+            }
+            
+            th,
             td {
-                padding-left: 0.75em;
+                border: 0.125em solid #333;
+                line-height: 1.5;
+                padding: 0.75em;
+                text-align: left;
             }
-            td:before {
-                display: block;
-                margin-bottom: 0.75em;
-                margin-left: 0;
+            /* Stack rows vertically on small screens */
+            
+            @media (max-width: 30em) {
+                /* Hide column labels */
+                thead tr {
+                    position: absolute;
+                    top: -9999em;
+                    left: -9999em;
+                }
+                tr {
+                    border: 0.125em solid #333;
+                    border-bottom: 0;
+                }
+                /* Leave a space between table rows */
+                tr + tr {
+                    margin-top: 1.5em;
+                }
+                /* Get table cells to act like rows */
+                tr,
+                td {
+                    display: block;
+                }
+                td {
+                    border: none;
+                    border-bottom: 0.125em solid #333;
+                    /* Leave a space for data labels */
+                    padding-left: 50%;
+                }
+                /* Add data labels */
+                td:before {
+                    content: attr(data-label);
+                    display: inline-block;
+                    font-weight: bold;
+                    line-height: 1.5;
+                    margin-left: -100%;
+                    width: 100%;
+                }
             }
-        }
-    </style>
+            /* Stack labels vertically on smaller screens */
+            
+            @media (max-width: 20em) {
+                td {
+                    padding-left: 0.75em;
+                }
+                td:before {
+                    display: block;
+                    margin-bottom: 0.75em;
+                    margin-left: 0;
+                }
+            }
+        </style>
 </head>
 
 <body>
-    <div class="span9"/>
+    <div class="span9" />
     <div class="span2">
         <?php echo $this->element('sidebar'); ?>
     </div>
@@ -233,22 +233,14 @@
             <button name="closePopup" style="float:right">Close</button>
             <button style="float:right" onclick="switchDisplay(1)">Location</button>
             <button style="float:right" onclick="switchDisplay(0)">Statistics</button>
-            <h2 id="namename"><?php echo $chem_info[0][0]['chemical_name']; ?></h2>
+            <h2 id="namename">Unknown Name</h2>
             <hr>
             <br>
             <div id="chem-info">
-                <h3 id="car">Carcinogenic:
-                    <?php echo $chem_info[0][0]['carcinogenic']; ?>
-                </h3>
-                <h3 id="cleanAir">Clean Air Act:
-                    <?php echo $chem_info[0][0]['clean_air_act']; ?>
-                </h3>
-                <h3 id="metall">Metal:
-                    <?php echo $chem_info[0][0]['metal']; ?>
-                </h3>
-                <h3 id="PBBT">PBT:
-                    <?php echo $chem_info[0][0]['pbt']; ?>
-                </h3>
+                <h3 id="car">Carcinogenic: N/A</h3>
+                <h3 id="cleanAir">Clean Air Act: N/A</h3>
+                <h3 id="metall">Metal: N/A</h3>
+                <h3 id="PBBT">PBT: N/A</h3>
             </div>
             <div id="chem-map" style="display:none; height: 75%;">
                 <div style="float:left; max-width: 49%; height: 100%;">
@@ -262,7 +254,7 @@
                             <?php foreach ($facility_info as $facility): ?>
                                 <tr>
                                     <td>
-                                        <a class="pageLink" onlclick='/../SOAP/index.php/facilities#<?php echo $facility[0]['facility_id']; ?>'>
+                                        <a class="pageLink" onlclick='/../SOAP/index.php/facilities#<?php echo $facility[0][' facility_id ']; ?>'>
                                             <?php echo $facility[0]['facility_name']; ?>
                                         </a>
                                     </td>
@@ -318,18 +310,42 @@
 <script>
     function popupOpenClose(e) {
         0 == $(".wrapper").length && $(e).wrapInner("<div class='wrapper'></div>"), $(e).show(), $(e).click(function (n) {
-            n.target == this && $(e).is(":visible") && $(e).hide()
-        }), $(e).find("button[name=closePopup]").on("click", function () {
-            history.pushState('', document.title, window.location.pathname);
-            $(".formElementError").is(":visible") && $(".formElementError").remove(), $(e).hide()
-        })
+                n.target == this && $(e).is(":visible") && $(e).hide()
+            }),
+            $(e).find("button[name=closePopup]").on("click", function () {
+                history.pushState('', document.title, window.location.pathname);
+                $(".formElementError").is(":visible") && $(".formElementError").remove(), $(e).hide()
+            })
     }
-    $(document).ready(function () {
-        $("[data-js=openPopup]").on("click", function () {
-            popupOpenClose($(".popup"))
-            switchDisplay(0)
-        })
-    });
+
+    function populatePopup() {
+        if (!location.hash) {
+            return
+        }
+
+        popupOpenClose($(".popup"))
+        switchDisplay(0)
+
+        $.ajax({
+            url: "/cabect/SOAP/index.php/chemicals/view/" + location.hash.split("#")[1],
+            type: 'POST',
+            success: function (data) {
+                
+                
+                data = JSON.parse(data)
+                
+                document.getElementById('namename').innerHTML = data.NAME;
+                document.getElementById('car').innerHTML = "Carcinogenic: " + data.CAR;
+                document.getElementById('cleanAir').innerHTML = "Clean Air Act: " + data.CLEANAIR;
+                document.getElementById('metall').innerHTML = "Metal: " + data.METAL;
+                document.getElementById('PBBT').innerHTML = "PBT: " + data.PBT;
+                
+                
+            }
+        });
+    }
+
+    $(window).on('hashchange', populatePopup);
 
     function switchDisplay(eID) {
         var id = ['chem-info', 'chem-map']
@@ -338,39 +354,10 @@
             document.getElementById(id[Math.abs(eID - 1)]).style.display = 'none'
         }
     }
-</script>
-<!-- Checks to see if link is clicked through checking for a hash - Brittany Reedman -->
-<script>
-    $(window).on('hashchange', function() {
-        chem_hash = location.hash;
-        popupOpenClose($(".popup"))
-        switchDisplay(0)
-        
 
-        $.ajax({
-            url: "/cabect/SOAP/index.php/chemicals/view/" + chem_hash.split("#")[1],
-            type: 'POST',
-            success: function(data) 
-            {
-                data = data.split("///:///");
-                document.getElementById('namename').innerHTML = data[0];
-                document.getElementById('car').innerHTML = "Carcinogenic: " + data[1];
-                document.getElementById('cleanAir').innerHTML = "Clean Air Act: " + data[2];
-                document.getElementById('metall').innerHTML = "Metal: " + data[3];
-                document.getElementById('PBBT').innerHTML = "PBT: " + data[4];
-                
-                console.log(data[0])
-                
-            }    ,error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-            } 
-        
-        });
-    });
-    window.onload = function() {
-        if(window.location.hash != ''){
-            popupOpenClose($(".popup"))
-            switchDisplay(0)
+    window.onload = function () {
+        if (location.hash != '') {
+            populatePopup()
         }
     };
 </script>
