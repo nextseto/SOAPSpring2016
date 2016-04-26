@@ -486,8 +486,14 @@
 </script>
 <!-- Checks to see if link is clicked through checking for a hash - Brittany Reedman -->
 <script>
-$(window).on('hashchange', function() {
-    popupOpenClose($(".popup"))
-    switchDisplay(0)
-});
+    $(window).on('hashchange', function() {
+        popupOpenClose($(".popup"))
+        switchDisplay(0)
+    });
+    window.onload = function() {
+        if(window.location.hash != ''){
+            popupOpenClose($(".popup"))
+            switchDisplay(0)
+        }
+    };
 </script>

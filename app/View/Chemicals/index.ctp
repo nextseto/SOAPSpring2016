@@ -229,14 +229,14 @@
         <?php $this->Js->writeBuffer(); ?>
     </div>
     <div class="popup">
-        <div style="float:left; height: 50%;">
+        <div style="float:left; height: auto;">
             <button name="closePopup" style="float:right">Close</button>
             <button style="float:right" onclick="switchDisplay(1)">Location</button>
             <button style="float:right" onclick="switchDisplay(0)">Statistics</button>
             <h2><?php echo $chem_info[0][0]['chemical_name']; ?></h2>
             <hr>
             <br>
-            <div id="chem-info">
+            <div id="chem-info" style="height: 75%;">
                 <h3>Carcinogenic:
                     <?php echo $chem_info[0][0]['carcinogenic']; ?>
                 </h3>
@@ -346,4 +346,10 @@
         popupOpenClose($(".popup"))
         switchDisplay(0)
     });
+    window.onload = function() {
+        if(window.location.hash != ''){
+            popupOpenClose($(".popup"))
+            switchDisplay(0)
+        }
+    };
 </script>
