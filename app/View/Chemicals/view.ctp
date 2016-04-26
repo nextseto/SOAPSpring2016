@@ -178,7 +178,7 @@
                                 <th>Facilities that contain this chemical:</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="display: block; height: 100%; overflow-y: auto">
                             <?php foreach ($facility_info as $facility): ?>
                                 <tr>
                                     <td>
