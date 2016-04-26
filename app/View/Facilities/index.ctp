@@ -240,29 +240,15 @@
                 <br>
                 <div id="build-info">
                     <div style="float:left; width: 49%;">
-                        <h3 id="facParent">Parent Company:
-
-                    </h3>
-                        <h3 id="facDanger">Danger Level:
-
-                    </h3>
-                        <h3 id="facBrown">Brownfield:
-
-                    </h3>
+                        <h3 id="facParent">Parent Company: Unknown</h3>
+                        <h3 id="facDanger">Danger Level: Unknown</h3>
+                        <h3 id="facBrown">Brownfield: Unknown</h3>
                         <br>
-                        <h3 id="facAddr">Street Address:
-  
-                    </h3>
-                        <h3 id="facCou">County:
- 
-                    </h3>
-                        <h3 id="facMun">Municipality:
-
-                    </h3>
-                        <h3 id="facLATLNG">
-                    </h3>
-                        <h3 id="facXY">
-                    </h3>
+                        <h3 id="facAddr">Street Address: Unknown</h3>
+                        <h3 id="facCou">County: Unknown</h3>
+                        <h3 id="facMun">Municipality: Unknown</h3>
+                        <h3 id="facLATLNG">Unknown</h3>
+                        <h3 id="facXY">Unknown</h3>
                     </div>
                     <div style="float:right; width: 49%;">
                         <!--
@@ -292,15 +278,7 @@
                 </div>
                 <div id="build-chem" style="display:none;">
 
-                    <div style="float:left">
-                        <?php foreach ($chem_info as $chem): ?>
-                            <h3><a class="pageLink" href='/../SOAP/index.php/chemicals#<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
-                            <h4>Total Amount: <?php echo $chem[0]['total_amount']; ?></h4>
-                            <h4>Fugitive Air Amount: <?php echo $chem[0]['fugair_amount']; ?></h4>
-                            <h4>Water Amount: <?php echo $chem[0]['water_amount']; ?></h4>
-                            <h4>Stack Air Amount: <?php echo $chem[0]['stackair_amount']; ?></h4>
-                            <br>
-                            <?php endforeach; ?>
+                    <div style="float:left" id="chemicalList">
                     </div>
                     <div style="float:right">
                         <div class="section">
@@ -441,21 +419,21 @@
                                                             <div id="donutchart" style="width: 125%; height: 100%;"></div>
                                                             <div id="donutchart2" style="width: 125%; height: 100%;"></div>
                                                         </right>
-                                                        </div>
-                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
-
-
-<!-- Function to call to enable tooltip feature - Joie Murphy -->
-<script type="text/javascript">
-    $(function () {
-        $("[rel='tooltip']").tooltip()
-    });
-</script>
 
 <!-- Including necessary javascript for bootstrap tooltip - Joie Murphy -->
 <script language='javascript' src='<?=$this->webroot?>js/jquery.js'></script>
@@ -464,6 +442,11 @@
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-transition.js'></script>
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-tooltip.js'></script>
 <script>
+    // Function to call to enable tooltip feature
+    $(function () {
+        $("[rel='tooltip']").tooltip()
+    });
+    
     function popupOpenClose(e) {
         0 == $(".wrapper").length && $(e).wrapInner("<div class='wrapper'></div>"), $(e).show(), $(e).click(function (n) {
                 n.target == this && $(e).is(":visible") && $(e).hide()
@@ -478,7 +461,7 @@
         if (!location.hash) {
             return
         }
-        
+
         popupOpenClose($(".popup"))
         switchDisplay(0)
 
@@ -486,9 +469,11 @@
             url: "/cabect/SOAP/index.php/facilities/view/" + location.hash.split("#")[1],
             type: 'POST',
             success: function (data) {
-
-
+                
+                // This data variable has ALL THE DATA TO POPULATE THE POPUP.
                 data = JSON.parse(data)
+                
+                //Recommendation: console.log(data) if you want to take a look at the data
 
                 document.getElementById('facName').innerHTML = data.NAME;
                 document.getElementById('facParent').innerHTML = "Parent Company: " + data.PARENT;
@@ -501,6 +486,17 @@
                 document.getElementById('facXY').innerHTML = data.XY;
 
 
+                //popup's list of chemicals
+                var temp = ""
+                for (var count = 0, size = data.CHEMICAL.length; count < size; count++) {
+                    temp += '<h3><a class="pageLink" href="/cabect/SOAP/index.php/facilities#' + data.CHEMICAL[count].id + '">' + data.CHEMICAL[count].name + '</a></h3>'
+                    temp += '<h4>Total Amount: ' + data.CHEMICAL[count].totalAmt + '</h4>'
+                    temp += '<h4>Fugitive Air Amount: ' + data.CHEMICAL[count].fugAmt + '</h4>'
+                    temp += '<h4>Water Amount: ' + data.CHEMICAL[count].waterAmt + '</h4>'
+                    temp += '<h4>Stack Air Amount: ' + data.CHEMICAL[count].airAmt + '</h4><br>'
+                }
+
+                document.getElementById('chemicalList').innerHTML = temp;
             }
         });
     }

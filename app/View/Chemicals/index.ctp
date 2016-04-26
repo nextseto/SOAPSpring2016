@@ -250,16 +250,7 @@
                                 <th>Facilities that contain this chemical:</th>
                             </tr>
                         </thead>
-                        <tbody style="display: block; height: 100%; overflow-y: auto">
-                            <?php foreach ($facility_info as $facility): ?>
-                                <tr>
-                                    <td>
-                                        <a class="pageLink" onlclick='/../SOAP/index.php/facilities#<?php echo $facility[0][' facility_id ']; ?>'>
-                                            <?php echo $facility[0]['facility_name']; ?>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
+                        <tbody style="display: block; height: 100%; overflow-y: auto" id="popupTable">
                         </tbody>
                     </table>
                 </div>
@@ -294,20 +285,19 @@
 
 </html>
 
-<!-- Function to call to enable tooltip feature -->
-<script type="text/javascript">
-    $(function () {
-        $("[rel='tooltip']").tooltip()
-    });
-</script>
-
 <!-- Including necessary javascript for bootstrap tooltip - Joie Murphy -->
 <script language='javascript' src='<?=$this->webroot?>js/jquery.js'></script>
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-alert.js'></script>
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-modal.js'></script>
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-transition.js'></script>
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-tooltip.js'></script>
+
 <script>
+    // Function to call to enable tooltip feature
+    $(function () {
+        $("[rel='tooltip']").tooltip()
+    });
+    
     function popupOpenClose(e) {
         0 == $(".wrapper").length && $(e).wrapInner("<div class='wrapper'></div>"), $(e).show(), $(e).click(function (n) {
                 n.target == this && $(e).is(":visible") && $(e).hide()
@@ -331,8 +321,10 @@
             type: 'POST',
             success: function (data) {
                 
-                
+                // This data variable has ALL THE DATA TO POPULATE THE POPUP.
                 data = JSON.parse(data)
+                
+                //Recommendation: console.log(data) if you want to take a look at the data
                 
                 document.getElementById('namename').innerHTML = data.NAME;
                 document.getElementById('car').innerHTML = "Carcinogenic: " + data.CAR;
@@ -340,7 +332,16 @@
                 document.getElementById('metall').innerHTML = "Metal: " + data.METAL;
                 document.getElementById('PBBT').innerHTML = "PBT: " + data.PBT;
                 
+                //popupTable
+                var temp = ""
+                for (var count = 0, size = data.FACILITY.length; count < size; count++)
+                {
+                    temp += '<tr><td>'
+                    temp += '<a class="pageLink" href="/cabect/SOAP/index.php/facilities#' + data.FACILITY[count].id + '">' + data.FACILITY[count].name + '</a>'
+                    temp += '</tr></td>'
+                }
                 
+                document.getElementById('popupTable').innerHTML = temp;
             }
         });
     }
