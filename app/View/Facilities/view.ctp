@@ -310,6 +310,7 @@ visualization of chemical percentages and their potential health impacts.
   	<div class="container">
     	<div class="row">
       	<div class="col-md-12">
+	<right>
 
         	<div class="col-md-12" style="float: right; width: 95%; margin-right: 1%; margin-bottom: 0.5em;"></div>
         	<div class="col-rt-12" style="float: right; width: 60%; margin-right: 1%; margin-bottom: 0.5em;">
@@ -326,13 +327,14 @@ visualization of chemical percentages and their potential health impacts.
                     	title: 'Chemicals Present in Facility',
                     	pieHole: 0.4,
                       	legend: {position: 'center'},
-			backgroundColor: 'transparent'
+			backgroundColor: 'transparent',
+			pieSliceTextStyle: {color: 'black',}
                   	};
                   	var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
                   	chart.draw(data, options);
                 	}
           	</script>
-          	
+    	
           	<div class="col-md-12" style="float: right; width: 95%; margin-right: 1%; margin-bottom: 0.5em;"></div>
         	<div class="col-rt-12" style="float: right; width: 60%; margin-right: 1%; margin-bottom: 0.5em;">
           	<!--carcinogenic chemical(facility) pie chart-->
@@ -359,56 +361,11 @@ visualization of chemical percentages and their potential health impacts.
           	<div id="donutchart" style="width: 128; height: 128;"></div>
         	</div>
         	<div class="col-rt-12" style="float: left; width: 95%; margin-right: 1%; margin-bottom: 0.5em;">
-          	
-          	<!--chemical (county) pie chart-->
-          	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-          	<script type="text/javascript">
-          	
-          		var countyChemArray= <?php echo json_encode($countyChemicals);?>;
-            	google.load("visualization", "1", {packages:["corechart"]});
-                	google.setOnLoadCallback(drawChart);
-                	function drawChart() {
-                  	var data = google.visualization.arrayToDataTable(countyChemArray);
-                  	var options = {
-                    	title: 'Chemicals Present in County',
-                    	pieHole: 0.4,
-                      	legend: {position: 'bottom'},
-			backgroundColor: 'transparent'
-               	 
-                  	};
-                  	var chart = new google.visualization.PieChart(document.getElementById('donutchart3'));
-                  	chart.draw(data, options);
-                	}
-          	</script>
-          	
-          	<div class="col-md-12" style="float: left; width: 95%; margin-right: 1%; margin-bottom: 0.5em;"></div>
-        	<div class="col-rt-12" style="float: left; width: 60%; margin-right: 1%; margin-bottom: 0.5em;">
-          	<!--carcinogenic chemical (county) pie chart-->
-          	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-          	<script type="text/javascript">
-          	
-          		var countyChemCarArray= <?php echo json_encode($countyCarcinogenic);?>;
-            	google.load("visualization", "1", {packages:["corechart"]});
-                	google.setOnLoadCallback(drawChart);
-                	function drawChart() {
-                  	var data = google.visualization.arrayToDataTable(countyChemCarArray);
-                  	var options = {
-                    	title: 'Carcinogenic Chemicals Present in County',
-                    	pieHole: 0.4,
-                      	legend: {position: 'bottom'},
-                       	backgroundColor: 'transparent'
-               	 
-                  	};
-                  	var chart = new google.visualization.PieChart(document.getElementById('donutchart4'));
-                  	chart.draw(data, options);
-                	}
-          	</script>
-          	</div>
-          	
-         <center>
+	</right>          	
+         <right>
           		<div id="donutchart" style="width: 125%; height: 100%;"></div>
           		<div id="donutchart2" style="width: 125%; height: 100%;"></div> 
-        </center>
+        </right>
 <br>
           	<div class="facility-details">
             	<h3>Facility Information:</h3>
