@@ -45,7 +45,6 @@
             width: 100%;
             left: 0;
             top: 0;
-	        overflow-y: scroll;
         }
         
         .popup > div {
@@ -64,7 +63,6 @@
             transform: translate(-50%, -50%);
             left: 50%;
             top: 50%;
-    	    overflow-y: scroll;
     	    max-height: 70%;
         }
         
@@ -151,7 +149,7 @@
     <button data-js="openPopup">Chemical Popup</button>
 
     <div class="popup">
-        <div style="float:left;">
+        <div style="float:left; height: 50%;">
             <button name="closePopup" style="float:right">Close</button>
             <button style="float:right" onclick="switchDisplay(1)">Location</button>
             <button style="float:right" onclick="switchDisplay(0)">Statistics</button>
@@ -172,9 +170,9 @@
                     <?php echo $chem_info[0][0]['pbt']; ?>
                 </h3>
             </div>
-            <div id="chem-map" style="display:none;">
-                <div style="float:left; max-width: 49%;">
-                    <table>
+            <div id="chem-map" style="display:none; height: 75%;">
+                <div style="float:left; max-width: 49%; height: 100%;">
+                    <table style="height: 100%;">
                         <thead>
                             <tr>
                                 <th>Facilities that contain this chemical:</th>

@@ -206,14 +206,14 @@
                             };
                             var Options = {
                                 zoom: 10,
-                                center: myLatLng,
+                                //center: myLatLng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             }
                             var map = new google.maps.Map(document.getElementById('map'), Options);
                             var marker = new google.maps.Marker({
                                 position: myLatLng,
                                 map: map,
-                                title: "Facilitie Map"
+                                title: "Facilities Map"
                             });
                         }
                     </script>
