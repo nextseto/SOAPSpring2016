@@ -347,30 +347,30 @@
         switchDisplay(0)
         
 
-    $.ajax({
-        url: "/cabect/SOAP/index.php/chemicals/view/" + chem_hash.split("#")[1],
-        type: 'POST',
-        success: function(data) 
-        {
-            data = data.split("///:///");
-            document.getElementById('namename').innerHTML = data[0];
-            document.getElementById('car').innerHTML = "Carcinogenic: " + data[1];
-            document.getElementById('cleanAir').innerHTML = "Clean Air Act: " + data[2];
-            document.getElementById('metall').innerHTML = "Metal: " + data[3];
-            document.getElementById('PBBT').innerHTML = "PBT: " + data[4];
-            
-            console.log(data[0])
-            
-        }    ,error: function(XMLHttpRequest, textStatus, errorThrown) { 
-        alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-    } 
+        $.ajax({
+            url: "/cabect/SOAP/index.php/chemicals/view/" + chem_hash.split("#")[1],
+            type: 'POST',
+            success: function(data) 
+            {
+                data = data.split("///:///");
+                document.getElementById('namename').innerHTML = data[0];
+                document.getElementById('car').innerHTML = "Carcinogenic: " + data[1];
+                document.getElementById('cleanAir').innerHTML = "Clean Air Act: " + data[2];
+                document.getElementById('metall').innerHTML = "Metal: " + data[3];
+                document.getElementById('PBBT').innerHTML = "PBT: " + data[4];
+                
+                console.log(data[0])
+                
+            }    ,error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+            } 
         
+        });
     });
-        
-
-
-        
-        
-        
-    });
+    window.onload = function() {
+        if(window.location.hash != ''){
+            popupOpenClose($(".popup"))
+            switchDisplay(0)
+        }
+    };
 </script>
