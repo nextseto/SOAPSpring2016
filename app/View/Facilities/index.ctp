@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-
+<!--Facilities index.ctp -->
 <head>
     <?php $this->Html->script('jquery'); ?>
         <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
@@ -148,6 +148,8 @@
 </head>
 
 <body>
+
+<!-- defines the sidebar on the page -->
     <div class="span9" />
     <div class="span2">
         <?php echo $this->element('sidebar'); ?>
@@ -160,6 +162,7 @@
             <br>
         </div>
 
+<!-- defines search bar on facilities page -->
         <div class="span10" style="margin-left:20%;">
             <div class="input-group">
                 <div class="input-group-addon">Search</div>
@@ -167,6 +170,7 @@
                 <a title="Options" id="select_cog" href="#"><img style="position:relative; z-index:100; margin: 8px 0 0 -65px;" src="<?php echo $this->webroot; ?>img/icon_cog.png"></a>
             </div>
 
+<!-- table attributes -->
             <div id="options" style="display:none; color:white; margin-bottom:20px;">
                 <label class="filterLabel">Filters:</label>
                 <br>
@@ -213,6 +217,7 @@
                     Page <span id="currentPage">1</span> of <span id="pageCount"></span>
                     <br><span id="totalResults"></span>
                 </div>
+<!-- pagination of the facilities table-->
                 <div id="pageList" class="span7 pagination pagination-centered">
                 </div>
                 <div class="span3" style="margin-top:12px; text-align:center;">
@@ -230,6 +235,7 @@
         </div>
     </div>
     <?php $this->Js->writeBuffer(); ?>
+<!-- defines popup for facilities -->
     <div class="popup">
         <div style="float:left; width: 85%;">
             <button name="closePopup" style="float:right">Close</button>
@@ -239,6 +245,7 @@
             <hr>
             <br>
             <div id="build-info">
+<!-- facillties popup attributes-->
                 <div style="float:left; width: 49%;">
                     <h3>Parent Company:
                         <?php echo $facility_info[0][0]['owner_name']; ?>
@@ -276,6 +283,7 @@
                     ?>
                     </h3>
                 </div>
+<!-- integration of the google map api for the location of the facility -->
                 <div style="float:right; width: 49%;">
                     <div id="map"></div>
                     <script>
@@ -302,7 +310,7 @@
                 </div>
             </div>
             <div id="build-chem" style="display:none;">
-
+<!-- define chemical graphs-->
                 <div style="float:left">
                     <?php foreach ($chem_info as $chem): ?>
                         <h3><a class="pageLink" href='/../SOAP/index.php/chemicals#<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
@@ -322,6 +330,7 @@
                             <form action="#" method="#">
                 <right>
 
+<! queries finding the chemical information for the chemicals-->
                 <!--Query 1: Find the names of all chemicals and their total_amounts present in a facility.-->
                             <?php
                                 $db = pg_connect('host=localhost port=5432 dbname=soap user=postgres password=cabect'); 
@@ -461,6 +470,8 @@
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-transition.js'></script>
 <script language='javascript' src='<?=$this->webroot?>js/bootstrap-tooltip.js'></script>
 <script>
+
+<!-- popup open and close functions defined-->
     function popupOpenClose(e) {
         0 == $(".wrapper").length && $(e).wrapInner("<div class='wrapper'></div>"), $(e).show(), $(e).click(function (n) {
             n.target == this && $(e).is(":visible") && $(e).hide()
