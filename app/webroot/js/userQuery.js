@@ -159,7 +159,7 @@ function filterSearch(event, modelName, orderBy, offsetNum, limit){
                     $("#totalResults").html("(" + count + " results)");
                     data = data[1];
                     for(var i = 0; i < data.length; i++){
-                        var tableRow = "<tr><td class='span3' style='width:auto;'><a href='" + modelName + "/view/" + data[i][0][Object.keys(data[0][0])[0]] + "'>" + data[i][0][Object.keys(data[0][0])[1]] + "</a></td>";
+                        var tableRow = "<tr><td class='span3' style='width:auto;'><a href='" + modelName + "#" + data[i][0][Object.keys(data[0][0])[0]] + "'>" + data[i][0][Object.keys(data[0][0])[1]] + "</a></td>";
                         for(var j = 2; j < Object.keys(data[0][0]).length; j++){
                             tableRow += "<td class='span3' style='width:auto;'>" + data[i][0][Object.keys(data[0][0])[j]] + "</td>";
                         }

@@ -200,20 +200,22 @@
                                 lat: 40.886546,
                                 lng: -73.987269
                             };
-
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 14,
+                            var Options = {
+                                zoom: 10,
                                 center: myLatLng,
-                                disableDefaultUI: true
-                            });
-
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            }
+                            var map = new google.maps.Map(document.getElementById('map'), Options);
                             var marker = new google.maps.Marker({
                                 position: myLatLng,
                                 map: map,
-                                title: 'ACME GEAR CO INC'
+                                title: "Chem Map"
                             });
                         }
                     </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+                </div>
                     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
                 </div>
             </div>
