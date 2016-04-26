@@ -366,26 +366,6 @@ visualization of chemical percentages and their potential health impacts.
           		<div id="donutchart" style="width: 125%; height: 100%;"></div>
           		<div id="donutchart2" style="width: 125%; height: 100%;"></div> 
         </right>
-<br>
-          	<div class="facility-details">
-            	<h3>Facility Information:</h3>
-            	 	<hr>
-            	<p>Facility Name: ECOLAB INC&nbsp;</p>
-				<p>Facility Name: BL ENGLAND GENERATING STATION&nbsp;</p>
-				<p>County Name: ESSEX&nbsp;</p>
-				<p>County Name: ESSEX&nbsp;</p>
-          	</div>
-        	</div>
-      	</div>
-    	</div>
-  	</div>
-	</div>
-</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <script>
         function popupOpenClose(e) {
