@@ -69,12 +69,7 @@
                 height: 200px;
                 background-color: #CCC;
             }
-            
-            body {
-                color: #333;
-                padding: 1.5em;
-            }
-            
+
             table {
                 border-collapse: collapse;
                 width: 100%;
