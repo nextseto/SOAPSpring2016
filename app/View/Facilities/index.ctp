@@ -479,12 +479,12 @@
                 document.getElementById('facMun').innerHTML = "Municipality: " + data.MUN;
                 document.getElementById('facLATLNG').innerHTML = data.LAT + " | " + data.LNG;
                 document.getElementById('facXY').innerHTML = data.XY;
-
-
+                
+                
                 //popup's list of chemicals
                 var temp = ""
                 for (var count = 0, size = data.CHEMICAL.length; count < size; count++) {
-                    temp += '<h3><a class="pageLink" href="/cabect/SOAP/index.php/facilities#' + data.CHEMICAL[count].id + '">' + data.CHEMICAL[count].name + '</a></h3>'
+                    temp += '<h3><a class="pageLink" href="/cabect/SOAP/index.php/chemicals#' + data.CHEMICAL[count].id + '">' + data.CHEMICAL[count].name + '</a></h3>'
                     temp += '<h4>Total Amount: ' + data.CHEMICAL[count].totalAmt + '</h4>'
                     temp += '<h4>Fugitive Air Amount: ' + data.CHEMICAL[count].fugAmt + '</h4>'
                     temp += '<h4>Water Amount: ' + data.CHEMICAL[count].waterAmt + '</h4>'
