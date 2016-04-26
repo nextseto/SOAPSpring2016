@@ -11,9 +11,9 @@
     "LNG": "<?php echo ($facility_info[0][0]['longitude'] == null ? 'Longitude: N/A' : 'Longitude: ' . $facility_info[0][0]['longitude']); ?>,
     "XY": "<?php echo ($facility_info[0][0]['x_coor'] == null || $facility_info[0][0]['y_coor'] == null ? 'X Coordinate: N/A, Y Coordinate: N/A' : 'X Coordinate: ' . floatval($facility_info[0][0]['x_coor']) . ', ' . 'Y Coordinate: ' . -1*floatval($facility_info[0][0]['y_coor'])); ?>",
     "CHEMICAL": [
-        <?php for ($x = 0; $x < count($chem_info); $x++) 
+       <?php for ($x = 0; $x < count($chem_info); $x++) 
         {
-            echo '{ "name" : "' . addslashes($chem_info[$x][0]["chemical_name"]) . '", "id" : "' . addslashes($chem_info[$x][0]["chemical_id"]) . '", "totalAmt" : "' . addslashes($chem_info[$x][0]["total_amount"]) . '", "fugAmt" : "' . addslashes($chem_info[$x][0]["fugair_amount"]) . '", "waterAmt" : "' . addslashes($chem_info[$x][0]["water_amount"]) . '", "airAmt" : "' . addslashes($chem_info[$x][0]["stackair_amount"]) . '" }';
+            echo '{ "name" : "' . addcslashes($chem_info[$x][0]["chemical_name"], '"\\/') . '", "id" : "' . $chem_info[$x][0]["chemical_id"] . '", "totalAmt" : "' . addslashes($chem_info[$x][0]["total_amount"]) . '", "fugAmt" : "' . addslashes($chem_info[$x][0]["fugair_amount"]) . '", "waterAmt" : "' . addslashes($chem_info[$x][0]["water_amount"]) . '", "airAmt" : "' . addslashes($chem_info[$x][0]["stackair_amount"]) . '" }';
             
             echo ($x < count($chem_info) - 1 ? ',' : '');
         }

@@ -3,7 +3,7 @@
 
 <head>
     <?php $this->Html->script('jquery'); ?>
-        <script type="text/javascript" src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
+        <script src="<?php echo $this->webroot; ?>/js/userQuery.js"></script>
         <style>
             .details {
                 margin-bottom: 25px;
@@ -286,18 +286,13 @@
 </html>
 
 <!-- Including necessary javascript for bootstrap tooltip - Joie Murphy -->
-<script language='javascript' src='<?=$this->webroot?>js/jquery.js'></script>
-<script language='javascript' src='<?=$this->webroot?>js/bootstrap-alert.js'></script>
-<script language='javascript' src='<?=$this->webroot?>js/bootstrap-modal.js'></script>
-<script language='javascript' src='<?=$this->webroot?>js/bootstrap-transition.js'></script>
-<script language='javascript' src='<?=$this->webroot?>js/bootstrap-tooltip.js'></script>
+<script src='<?=$this->webroot?>js/bootstrap-alert.js' async></script>
+<script src='<?=$this->webroot?>js/bootstrap-modal.js' async></script>
+<script src='<?=$this->webroot?>js/bootstrap-transition.js' async></script>
+<script src='<?=$this->webroot?>js/bootstrap-tooltip.js' async></script>
 
 <script>
-    // Function to call to enable tooltip feature
-    $(function () {
-        $("[rel='tooltip']").tooltip()
-    });
-    
+
     function popupOpenClose(e) {
         0 == $(".wrapper").length && $(e).wrapInner("<div class='wrapper'></div>"), $(e).show(), $(e).click(function (n) {
                 n.target == this && $(e).is(":visible") && $(e).hide()
