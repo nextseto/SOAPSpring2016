@@ -201,19 +201,19 @@
                     <script>
                         function initMap() {
                             var myLatLng = {
-                                lat: <?php echo floatval($facility_info[0][0]['x_coor']) ?>,
-                                lng: <?php echo -1*floatval($facility_info[0][0]['y_coor']) ?>
+                                lat: 40.886546,
+                                lng: -73.987269
                             };
                             var Options = {
                                 zoom: 10,
-                                //center: myLatLng,
+                                center: myLatLng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             }
                             var map = new google.maps.Map(document.getElementById('map'), Options);
                             var marker = new google.maps.Marker({
                                 position: myLatLng,
                                 map: map,
-                                title: "Facilities Map"
+                                title: "Chem Map"
                             });
                         }
                     </script>
@@ -225,7 +225,7 @@
 
                 <div style="float:left">
                     <?php foreach ($chem_info as $chem): ?>
-                        <h3><a class="pageLink" href='/../SOAP/index.php/chemicals/view/<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
+                        <h3><a class="pageLink" href='/../cabect/SOAP/index.php/chemicals/view/<?php echo $chem[0]['chemical_id']; ?>'><?php echo $chem[0]['chemical_name']; ?></a></h3>
                         <h4>Total Amount: <?php echo $chem[0]['total_amount']; ?></h4>
                         <h4>Fugitive Air Amount: <?php echo $chem[0]['fugair_amount']; ?></h4>
                         <h4>Water Amount: <?php echo $chem[0]['water_amount']; ?></h4>

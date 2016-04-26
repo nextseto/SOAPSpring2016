@@ -182,7 +182,7 @@
                             <?php foreach ($facility_info as $facility): ?>
                                 <tr>
                                     <td>
-                                        <a class="pageLink" href='/../SOAP/index.php/facilities/view/<?php echo $facility[0]['facility_id']; ?>'>
+                                        <a class="pageLink" href='/../cabect/SOAP/index.php/facilities/view/<?php echo $facility[0]['facility_id']; ?>'>
                                             <?php echo $facility[0]['facility_name']; ?>
                                         </a>
                                     </td>
