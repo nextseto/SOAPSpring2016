@@ -1,6 +1,8 @@
-# SOAP
+# SOAP (Spring 2016 fork)
 
-<http://csc415-team04.tcnj.edu/cabect/SOAP/index.php/SOAP>
+[Link to Live Project (Note must be accessed from TCNJ Intranet)](http://csc415-team04.tcnj.edu/cabect/SOAP/index.php/SOAP)
+
+[Link to Public Fall 2015 Project](http://tardis.tcnj.edu/cabect/SOAP/index.php)
 
 ## Problem Statement:    
 On the Data page, the tables, despite informative, are not presented in a way that provides clarity to the average user.  
